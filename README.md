@@ -47,8 +47,12 @@ You can learn more in the [Create React App documentation](https://facebook.gith
 To learn React, check out the [React documentation](https://reactjs.org/).
 =======
 # ProjetoSaper
+<<<<<<< HEAD
 >>>>>>> 688258a (Initial commit)
 =======
 # ProjetoSaper
 Membros: André, João Pedro Kuhn, João Vitor, Kayk, Leonardo
 >>>>>>> 0e9fb0a (Update README.md)
+=======
+Membros: André, João Pedro Kuhn, João Vitor, Kayk Aparecido de Paula Caputo, Leonardo
+>>>>>>> 92613b8 (Update README.md)
