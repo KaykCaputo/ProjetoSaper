@@ -48,3 +48,7 @@ To learn React, check out the [React documentation](https://reactjs.org/).
 =======
 # ProjetoSaper
 >>>>>>> 688258a (Initial commit)
+=======
+# ProjetoSaper
+Membros: André, João Pedro Kuhn, João Vitor, Kayk, Leonardo
+>>>>>>> 0e9fb0a (Update README.md)
