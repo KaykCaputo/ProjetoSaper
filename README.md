@@ -51,8 +51,12 @@ To learn React, check out the [React documentation](https://reactjs.org/).
 >>>>>>> 688258a (Initial commit)
 =======
 # ProjetoSaper
+<<<<<<< HEAD
 Membros: André, João Pedro Kuhn, João Vitor, Kayk, Leonardo
 >>>>>>> 0e9fb0a (Update README.md)
 =======
 Membros: André, João Pedro Kuhn, João Vitor, Kayk Aparecido de Paula Caputo, Leonardo
 >>>>>>> 92613b8 (Update README.md)
+=======
+Membros: André Gustavo Secco Netto, João Pedro Kuhn, João Vitor, Kayk Aparecido de Paula Caputo, Leonardo
+>>>>>>> d67e861 (Update README.md)
