@@ -14,18 +14,28 @@ Requisitos
  
 Ao se cadastrar um paciente e informar dados pesssoais (número do prontuário, nome do paciente, idade, especiliadade, data de internação), os dados acerca da sua permanência, classificação Fugulin e Origem precisam ser informados. Estes dados estão listados conforme categorias abaixo:
 
- -Motivo da permanência	Classificaçnao de Fugulin	Origem
- -Leito de enfermaria	Cuidados mínimos	SAMU
- -Leito de terapia intensiva	Cuidados intermediários	Demanda Espontânea
- -Parecer de outra especialidade	Cuidados de alta dependência	
- -Transferência externa	Cuidados semi-intensivos	
- -Social	Cuidados intensivos	
- -Hemodiálise		
- -Outros (descrever)		
+   -Motivo da permanência	Classificaçnao de Fugulin	Origem
+ 
+   -Leito de enfermaria	Cuidados mínimos	SAMU
+ 
+   -Leito de terapia intensiva	Cuidados intermediários	Demanda Espontânea
+ 
+   -Parecer de outra especialidade	Cuidados de alta dependência	
+  
+   -Transferência externa	Cuidados semi-intensivos	
+ 
+   -Social	Cuidados intensivos	
+ 
+   -Hemodiálise		
+ 
+   -Outros (descrever)		
+ 
  
 Na visualização dos leitos, cores de acordo com o tempo de perman6encia do paciente devem seguir as seguintes características:
 
--Verde:	Se tempo de permanência for ≤ 24 horas
--Amarela:	Permanência > 24 horas e ≤ 72 horas
--Vermelha: ≥ 72 horas
+  -Verde:	Se tempo de permanência for ≤ 24 horas
+
+  -Amarela:	Permanência > 24 horas e ≤ 72 horas
+
+  -Vermelha: ≥ 72 horas
 
