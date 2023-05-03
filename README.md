@@ -1,6 +1,7 @@
 # ProjetoSaper
 
---Tema: Sistema de controle e reserva de leitos
+--Tema: Sistema de controle e reserva de leitos--
+
 Membros: André Gustavo Secco Netto, João Pedro Kuhn, João Vitor Schmitt, Kayk Aparecido de Paula Caputo, Leonardo Victor Muller de Morais
 
 A gestão de leitos é um assunto muito importante para um hospital ou clínica, pois através da visualização e monitoramento constante do uso das camas, ou seja, os leitos ocupados, disponíveis, reservados, em limpeza, dentre outros, pode-se combater a ociosidade dos leitos ao aprimorar o planejamento para o seu uso.
