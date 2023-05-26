@@ -23,7 +23,10 @@ public class hospitalization {
     public hospitalization() {
     }
 
-    public hospitalization(Long hospitalization_id, Long bed_id, Long medicalRecord_id, String fugilin, String origem, Date hospitalizationDate, String permanenceReason, String specialty) {
+    public hospitalization(Long hospitalization_id,
+                           Long bed_id, Long medicalRecord_id, String fugilin,
+                           String origem, Date hospitalizationDate,
+                           String permanenceReason, String specialty) {
         this.hospitalization_id = hospitalization_id;
         this.bed_id = bed_id;
         this.medicalRecord_id = medicalRecord_id;
