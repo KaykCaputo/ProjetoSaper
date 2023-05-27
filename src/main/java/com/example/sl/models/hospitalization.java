@@ -1,9 +1,6 @@
 package com.example.sl.models;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 import java.util.Date;
 
@@ -19,7 +16,12 @@ public class hospitalization {
     Date hospitalizationDate;
     String permanenceReason;
     String specialty;
-
+    @ManyToOne
+    @JoinColumn(name = "medicalRecord_id", nullable = false)
+    private pacient _pacient;
+    @ManyToOne
+    @JoinColumn(name = "bed_id", nullable = false)
+    private bed _bed;
     public hospitalization() {
     }
 

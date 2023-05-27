@@ -2,8 +2,10 @@ package com.example.sl.models;
 
 import jakarta.persistence.*;
 
+import java.util.List;
+
 @Entity
-public class Pacient {
+public class pacient {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long medicalRecord_id;
@@ -11,13 +13,18 @@ public class Pacient {
     String cpf;
     String name;
     Integer age;
+    @Column(unique = true)
     String phone;
-    Boolean medicalRelease;
 
-    public Pacient() {
+    Boolean medicalRelease;
+    @OneToMany(mappedBy = "_pacient")
+    private List<hospitalization> hospitalizationList;
+
+
+    public pacient() {
     }
 
-    public Pacient(Long medicalRecord_id, String cpf, String name, Integer age, String phone, Boolean medicalRelease) {
+    public pacient(Long medicalRecord_id, String cpf, String name, Integer age, String phone, Boolean medicalRelease) {
         this.medicalRecord_id = medicalRecord_id;
         this.cpf = cpf;
         this.name = name;
