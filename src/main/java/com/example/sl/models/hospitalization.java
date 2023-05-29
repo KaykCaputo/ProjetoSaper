@@ -9,19 +9,19 @@ public class hospitalization {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long hospitalization_id;
-    Long bed_id;
     Long medicalRecord_id;
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "medicalRecord_id", nullable = false, updatable = false, insertable = false)
+    private pacient _pacient;
+    Long bed_id;
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "bed_id", nullable = false, updatable = false, insertable = false)
+    private bed _bed;
     String fugilin;
     String origem;
     Date hospitalizationDate;
     String permanenceReason;
     String specialty;
-    @ManyToOne
-    @JoinColumn(name = "medicalRecord_id", nullable = false)
-    private pacient _pacient;
-    @ManyToOne
-    @JoinColumn(name = "bed_id", nullable = false)
-    private bed _bed;
     public hospitalization() {
     }
 
