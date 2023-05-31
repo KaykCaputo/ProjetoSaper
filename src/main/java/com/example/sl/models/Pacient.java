@@ -1,11 +1,12 @@
 package com.example.sl.models;
 
+import com.example.sl.dto.PacientRequestDTO;
 import jakarta.persistence.*;
 
 import java.util.List;
 
 @Entity
-public class pacient {
+public class Pacient {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long medicalRecord_id;
@@ -18,19 +19,27 @@ public class pacient {
 
     Boolean medicalRelease;
     @OneToMany(mappedBy = "_pacient")
-    private List<hospitalization> hospitalizationList;
+    private List<Hospitalization> hospitalizationList;
 
 
-    public pacient() {
+    public Pacient() {
     }
 
-    public pacient(Long medicalRecord_id, String cpf, String name, Integer age, String phone, Boolean medicalRelease) {
+    public Pacient(Long medicalRecord_id, String cpf, String name, Integer age, String phone, Boolean medicalRelease) {
         this.medicalRecord_id = medicalRecord_id;
         this.cpf = cpf;
         this.name = name;
         this.age = age;
         this.phone = phone;
         this.medicalRelease = medicalRelease;
+    }
+
+    public Pacient(PacientRequestDTO pacientRequestDTO) {
+        this.cpf = pacientRequestDTO.cpf;
+        this.name = pacientRequestDTO.name;
+        this.age = pacientRequestDTO.age;
+        this.phone = pacientRequestDTO.phone;
+        this.medicalRelease = pacientRequestDTO.medicalRelease;
     }
 
     public String getName() {

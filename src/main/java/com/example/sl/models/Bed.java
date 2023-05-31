@@ -5,7 +5,7 @@ import jakarta.persistence.*;
 import java.util.List;
 
 @Entity
-public class bed {
+public class Bed {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long bed_id;
@@ -13,12 +13,12 @@ public class bed {
     String type;
 
     @OneToMany(mappedBy = "_bed")
-    private List<hospitalization> hospitalizationList;
+    private List<Hospitalization> hospitalizationList;
 
-    public bed() {
+    public Bed() {
     }
 
-    public bed(Long bed_id, Boolean occupied, String type) {
+    public Bed(Long bed_id, Boolean occupied, String type) {
         this.bed_id = bed_id;
         this.occupied = occupied;
         this.type = type;
