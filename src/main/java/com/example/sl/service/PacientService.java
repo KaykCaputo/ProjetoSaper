@@ -24,11 +24,7 @@ public class PacientService {
     public ResponseEntity<Object> getClientById(Long id) {
         Optional<Pacient> pacientOptional = pacientRepository.findById(id);
 
-        if(pacientOptional.isEmpty()) {
-            return ResponseEntity.notFound().build();
-        } else {
-            return ResponseEntity.ok().body(pacientOptional.get());
-        }
+        return pacientOptional.<ResponseEntity<Object>>map(pacient -> ResponseEntity.ok().body(pacient)).orElseGet(() -> ResponseEntity.notFound().build());
     }
 
 
