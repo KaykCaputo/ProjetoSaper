@@ -1,9 +1,6 @@
 package com.example.sl.models;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 import java.util.Date;
 
@@ -12,26 +9,28 @@ public class Hospitalization {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long hospitalization_id;
-    Long bed_id;
     Long medicalRecord_id;
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "medicalRecord_id", nullable = false, updatable = false, insertable = false)
+    private Pacient _pacient;
+    Long bed_id;
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "bed_id", nullable = false, updatable = false, insertable = false)
+    private Bed _bed;
     String fugilin;
-    String origin;
+    String origem;
     Date hospitalizationDate;
     String permanenceReason;
     String specialty;
-
     public Hospitalization() {
     }
 
-    public Hospitalization(Long hospitalization_id,
-                           Long bed_id, Long medicalRecord_id, String fugilin,
-                           String origin, Date hospitalizationDate,
-                           String permanenceReason, String specialty) {
+    public Hospitalization(Long hospitalization_id, Long bed_id, Long medicalRecord_id, String fugilin, String origem, Date hospitalizationDate, String permanenceReason, String specialty) {
         this.hospitalization_id = hospitalization_id;
         this.bed_id = bed_id;
         this.medicalRecord_id = medicalRecord_id;
         this.fugilin = fugilin;
-        this.origin= origin;
+        this.origem = origem;
         this.hospitalizationDate = hospitalizationDate;
         this.permanenceReason = permanenceReason;
         this.specialty = specialty;
@@ -46,11 +45,11 @@ public class Hospitalization {
     }
 
     public String getOrigem() {
-        return origin;
+        return origem;
     }
 
     public void setOrigem(String origem) {
-        this.origin = origin;
+        this.origem = origem;
     }
 
     public Date getHospitalizationDate() {
