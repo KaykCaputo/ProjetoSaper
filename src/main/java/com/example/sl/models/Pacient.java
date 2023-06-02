@@ -1,6 +1,9 @@
 package com.example.sl.models;
 
+import com.example.sl.dto.PacientRequestDTO;
 import jakarta.persistence.*;
+
+import java.util.List;
 
 @Entity
 public class Pacient {
@@ -11,8 +14,13 @@ public class Pacient {
     String cpf;
     String name;
     Integer age;
+    @Column(unique = true)
     String phone;
+
     Boolean medicalRelease;
+    @OneToMany(mappedBy = "_pacient")
+    private List<Hospitalization> hospitalizationList;
+
 
     public Pacient() {
     }
@@ -24,6 +32,14 @@ public class Pacient {
         this.age = age;
         this.phone = phone;
         this.medicalRelease = medicalRelease;
+    }
+
+    public Pacient(PacientRequestDTO pacientRequestDTO) {
+        this.cpf = pacientRequestDTO.cpf;
+        this.name = pacientRequestDTO.name;
+        this.age = pacientRequestDTO.age;
+        this.phone = pacientRequestDTO.phone;
+        this.medicalRelease = pacientRequestDTO.medicalRelease;
     }
 
     public String getName() {
