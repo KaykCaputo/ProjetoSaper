@@ -8,30 +8,30 @@ import jakarta.persistence.Id;
 import java.util.Date;
 
 @Entity
-public class hospitalization {
+public class Hospitalization {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long hospitalization_id;
     Long bed_id;
     Long medicalRecord_id;
     String fugilin;
-    String origem;
+    String origin;
     Date hospitalizationDate;
     String permanenceReason;
     String specialty;
 
-    public hospitalization() {
+    public Hospitalization() {
     }
 
-    public hospitalization(Long hospitalization_id,
+    public Hospitalization(Long hospitalization_id,
                            Long bed_id, Long medicalRecord_id, String fugilin,
-                           String origem, Date hospitalizationDate,
+                           String origin, Date hospitalizationDate,
                            String permanenceReason, String specialty) {
         this.hospitalization_id = hospitalization_id;
         this.bed_id = bed_id;
         this.medicalRecord_id = medicalRecord_id;
         this.fugilin = fugilin;
-        this.origem = origem;
+        this.origin= origin;
         this.hospitalizationDate = hospitalizationDate;
         this.permanenceReason = permanenceReason;
         this.specialty = specialty;
@@ -46,11 +46,11 @@ public class hospitalization {
     }
 
     public String getOrigem() {
-        return origem;
+        return origin;
     }
 
     public void setOrigem(String origem) {
-        this.origem = origem;
+        this.origin = origin;
     }
 
     public Date getHospitalizationDate() {

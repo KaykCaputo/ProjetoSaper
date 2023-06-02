@@ -6,17 +6,17 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
 @Entity
-public class bed {
+public class Bed {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long bed_id;
     Boolean occupied;
     String type;
 
-    public bed() {
+    public Bed() {
     }
 
-    public bed(Long bed_id, Boolean occupied, String type) {
+    public Bed(Long bed_id, Boolean occupied, String type) {
         this.bed_id = bed_id;
         this.occupied = occupied;
         this.type = type;
