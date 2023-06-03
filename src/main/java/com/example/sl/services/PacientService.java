@@ -1,6 +1,5 @@
-package com.example.sl.service;
+package com.example.sl.services;
 
-import ch.qos.logback.core.net.server.Client;
 import com.example.sl.dto.PacientRequestDTO;
 import com.example.sl.dto.PacientResponseDTO;
 import com.example.sl.models.Pacient;
@@ -17,11 +16,11 @@ public class PacientService {
     @Autowired
     PacientRepository pacientRepository;
 
-    public Object getAllClients() {
+    public Object getAllPacients() {
         return pacientRepository.findAll().stream().map(PacientResponseDTO::new);
     }
 
-    public ResponseEntity<Object> getClientById(Long id) {
+    public ResponseEntity<Object> getPacientById(Long id) {
         Optional<Pacient> pacientOptional = pacientRepository.findById(id);
 
         return pacientOptional.<ResponseEntity<Object>>map(pacient -> ResponseEntity.ok().body(pacient)).orElseGet(() -> ResponseEntity.notFound().build());
@@ -29,7 +28,7 @@ public class PacientService {
 
 
     @Transactional
-    public Pacient addClient(PacientRequestDTO pacientRequestDTO) {
+    public Pacient addPacient(PacientRequestDTO pacientRequestDTO) {
         Pacient pacient = new Pacient(pacientRequestDTO);
 
         pacientRepository.save(pacient);
@@ -38,7 +37,7 @@ public class PacientService {
     }
 
     @Transactional
-    public ResponseEntity<Object> updateClient(Long id, PacientRequestDTO pacientRequestDTO) {
+    public ResponseEntity<Object> updatePacient(Long id, PacientRequestDTO pacientRequestDTO) {
         Optional<Pacient> pacientOptional = pacientRepository.findById(id);
 
         if(pacientOptional.isEmpty()) {
@@ -58,7 +57,7 @@ public class PacientService {
     }
 
     @Transactional
-    public ResponseEntity<Object> deleteClient(Long id) {
+    public ResponseEntity<Object> deletePacient(Long id) {
         Optional<Pacient> pacientOptional = pacientRepository.findById(id);
 
         if(pacientOptional.isEmpty()) {
