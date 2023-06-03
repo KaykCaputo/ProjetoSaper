@@ -1,5 +1,6 @@
 package com.example.sl.models;
 
+import com.example.sl.dto.BedRequestDTO;
 import jakarta.persistence.*;
 
 import java.util.List;
@@ -22,6 +23,11 @@ public class Bed {
         this.bed_id = bed_id;
         this.occupied = occupied;
         this.type = type;
+    }
+
+    public Bed(BedRequestDTO bedRequestDTO) {
+        this.occupied = bedRequestDTO.occupied;
+        this.type = bedRequestDTO.type;
     }
 
     public Boolean getOccupied() {
