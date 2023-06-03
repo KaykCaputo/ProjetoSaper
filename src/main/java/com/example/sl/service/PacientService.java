@@ -1,4 +1,4 @@
-package com.example.sl.service;
+package com.example.sl.services;
 
 import ch.qos.logback.core.net.server.Client;
 import com.example.sl.dto.PacientRequestDTO;

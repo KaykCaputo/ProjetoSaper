@@ -2,7 +2,7 @@ package com.example.sl.controllers;
 
 import com.example.sl.dto.PacientRequestDTO;
 import com.example.sl.models.Pacient;
-import com.example.sl.service.PacientService;
+import com.example.sl.services.PacientService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
