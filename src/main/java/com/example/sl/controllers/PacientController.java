@@ -14,26 +14,26 @@ public class PacientController {
 
     @GetMapping
     public Object getPacients() {
-        return pacientService.getAllClients();
+        return pacientService.getAllPacients();
     }
 
     @GetMapping("/{id}")
     public Object getPacientById(@PathVariable(name = "id") Long id) {
-        return pacientService.getClientById(id);
+        return pacientService.getPacientById(id);
     }
 
     @PostMapping
     public Pacient addPacient(@RequestBody PacientRequestDTO pacientRequestDTO) {
-        return pacientService.addClient(pacientRequestDTO);
+        return pacientService.addPacient(pacientRequestDTO);
     }
 
     @PutMapping("/{id}")
     public Object updatePacient(@PathVariable(name = "id") Long id, @RequestBody PacientRequestDTO pacientRequestDTO) {
-        return pacientService.updateClient(id, pacientRequestDTO);
+        return pacientService.updatePacient(id, pacientRequestDTO);
     }
 
     @DeleteMapping("/{id}")
     public Object deletePacient(@PathVariable(name = "id") Long id) {
-        return pacientService.deleteClient(id);
+        return pacientService.deletePacient(id);
     }
 }
