@@ -1,6 +1,6 @@
 package com.example.sl.models;
 
-import com.example.sl.dto.BedRequestDTO;
+import com.example.sl.dto.bed.BedRequestDTO;
 import jakarta.persistence.*;
 
 import java.util.List;

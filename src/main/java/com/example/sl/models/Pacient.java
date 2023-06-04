@@ -1,6 +1,6 @@
 package com.example.sl.models;
 
-import com.example.sl.dto.PacientRequestDTO;
+import com.example.sl.dto.pacient.PacientRequestDTO;
 import jakarta.persistence.*;
 
 import java.util.List;

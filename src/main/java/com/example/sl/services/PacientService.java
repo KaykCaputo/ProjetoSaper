@@ -1,7 +1,7 @@
 package com.example.sl.services;
 
-import com.example.sl.dto.PacientRequestDTO;
-import com.example.sl.dto.PacientResponseDTO;
+import com.example.sl.dto.pacient.PacientRequestDTO;
+import com.example.sl.dto.pacient.PacientResponseDTO;
 import com.example.sl.models.Pacient;
 import com.example.sl.repository.PacientRepository;
 import jakarta.transaction.Transactional;

@@ -1,7 +1,7 @@
 package com.example.sl.services;
 
-import com.example.sl.dto.BedRequestDTO;
-import com.example.sl.dto.BedResponseDTO;
+import com.example.sl.dto.bed.BedRequestDTO;
+import com.example.sl.dto.bed.BedResponseDTO;
 import com.example.sl.models.Bed;
 import com.example.sl.repository.BedRepository;
 import jakarta.transaction.Transactional;

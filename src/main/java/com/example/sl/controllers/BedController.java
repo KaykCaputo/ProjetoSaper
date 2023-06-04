@@ -1,6 +1,6 @@
 package com.example.sl.controllers;
 
-import com.example.sl.dto.BedRequestDTO;
+import com.example.sl.dto.bed.BedRequestDTO;
 import com.example.sl.services.BedService;
 import com.example.sl.models.Bed;
 import org.springframework.beans.factory.annotation.Autowired;
