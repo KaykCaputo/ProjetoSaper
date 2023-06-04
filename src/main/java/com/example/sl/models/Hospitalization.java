@@ -1,5 +1,6 @@
 package com.example.sl.models;
 
+import com.example.sl.dto.hospitalization.HospitalizationRequestDTO;
 import jakarta.persistence.*;
 
 import java.util.Date;
@@ -34,6 +35,16 @@ public class Hospitalization {
         this.hospitalizationDate = hospitalizationDate;
         this.permanenceReason = permanenceReason;
         this.specialty = specialty;
+    }
+
+    public Hospitalization(HospitalizationRequestDTO hospitalizationRequestDTO) {
+        this.bed_id = hospitalizationRequestDTO.bed_id;
+        this.medicalRecord_id = hospitalizationRequestDTO.medicalRecord_id;
+        this.fugilin = hospitalizationRequestDTO.fugilin;
+        this.origem = hospitalizationRequestDTO.origem;
+        this.hospitalizationDate = hospitalizationRequestDTO.hospitalizationDate;
+        this.permanenceReason = hospitalizationRequestDTO.permanenceReason;
+        this.specialty = hospitalizationRequestDTO.specialty;
     }
 
     public String getFugilin() {
