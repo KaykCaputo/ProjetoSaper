@@ -1,4 +1,4 @@
-package com.example.sl.dto;
+package com.example.sl.dto.bed;
 
 public class BedRequestDTO {
     public Boolean occupied;

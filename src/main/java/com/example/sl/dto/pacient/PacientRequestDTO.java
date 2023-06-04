@@ -1,4 +1,4 @@
-package com.example.sl.dto;
+package com.example.sl.dto.pacient;
 
 public class PacientRequestDTO {
     public String cpf;

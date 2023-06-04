@@ -1,4 +1,4 @@
-package com.example.sl.dto;
+package com.example.sl.dto.pacient;
 
 import com.example.sl.models.Pacient;
 
