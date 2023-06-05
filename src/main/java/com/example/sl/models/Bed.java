@@ -13,7 +13,7 @@ public class Bed {
     Boolean occupied;
     String type;
 
-    @OneToMany(mappedBy = "_bed")
+    @OneToMany(mappedBy = "_bed", cascade = CascadeType.ALL)
     private List<Hospitalization> hospitalizationList;
 
     public Bed() {

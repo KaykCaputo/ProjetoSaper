@@ -11,11 +11,11 @@ public class Hospitalization {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long hospitalization_id;
     Long medicalRecord_id;
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne
     @JoinColumn(name = "medicalRecord_id", nullable = false, updatable = false, insertable = false)
     private Pacient _pacient;
     Long bed_id;
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne
     @JoinColumn(name = "bed_id", nullable = false, updatable = false, insertable = false)
     private Bed _bed;
     String fugilin;
