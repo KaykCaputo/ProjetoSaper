@@ -1,6 +1,7 @@
 package com.example.sl.models;
 import jakarta.persistence.*;
 
+
 @Entity
 public class User {
     @Id

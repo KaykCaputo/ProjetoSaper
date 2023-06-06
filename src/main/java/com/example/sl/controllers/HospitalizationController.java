@@ -1,5 +1,4 @@
 package com.example.sl.controllers;
-
 import com.example.sl.dto.hospitalization.HospitalizationRequestDTO;
 import com.example.sl.services.HospitalizationService;
 import org.springframework.beans.factory.annotation.Autowired;

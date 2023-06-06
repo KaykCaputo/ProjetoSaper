@@ -26,7 +26,6 @@ public class PacientService {
         return pacientOptional.<ResponseEntity<Object>>map(pacient -> ResponseEntity.ok().body(pacient)).orElseGet(() -> ResponseEntity.notFound().build());
     }
 
-
     @Transactional
     public Pacient addPacient(PacientRequestDTO pacientRequestDTO) {
         Pacient pacient = new Pacient(pacientRequestDTO);

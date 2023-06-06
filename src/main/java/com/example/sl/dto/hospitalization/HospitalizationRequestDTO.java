@@ -1,5 +1,4 @@
 package com.example.sl.dto.hospitalization;
-
 import java.util.Date;
 
 public class HospitalizationRequestDTO {

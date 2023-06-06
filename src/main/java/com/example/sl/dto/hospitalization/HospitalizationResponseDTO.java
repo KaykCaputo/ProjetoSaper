@@ -1,5 +1,4 @@
 package com.example.sl.dto.hospitalization;
-
 import com.example.sl.models.Hospitalization;
 
 import java.util.Date;

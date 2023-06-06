@@ -1,5 +1,4 @@
 package com.example.sl.dto.pacient;
-
 import com.example.sl.models.Pacient;
 
 public class PacientResponseDTO {

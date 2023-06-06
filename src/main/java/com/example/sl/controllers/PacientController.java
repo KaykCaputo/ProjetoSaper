@@ -1,5 +1,4 @@
 package com.example.sl.controllers;
-
 import com.example.sl.dto.pacient.PacientRequestDTO;
 import com.example.sl.models.Pacient;
 import com.example.sl.services.PacientService;

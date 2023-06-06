@@ -1,5 +1,4 @@
 package com.example.sl.dto.bed;
-
 import com.example.sl.models.Bed;
 
 public class BedResponseDTO {

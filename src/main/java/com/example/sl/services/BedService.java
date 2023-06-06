@@ -52,7 +52,6 @@ public class BedService {
             return ResponseEntity.ok().body(bed);
         }
     }
-
     @Transactional
     public ResponseEntity<Object> deleteBed(Long id) {
         Optional<Bed> bedOptional = bedRepository.findById(id);

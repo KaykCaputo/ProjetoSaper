@@ -36,7 +36,6 @@ public class HospitalizationService {
         return hospitalizationOptional.<ResponseEntity<Object>>map(hospitalization -> ResponseEntity.ok().body(hospitalization)).orElseGet(() -> ResponseEntity.notFound().build());
     }
 
-
     @Transactional
     public ResponseEntity<Object> addHospitalization(HospitalizationRequestDTO hospitalizationRequestDTO) {
         Optional<Pacient> pacientOptional = pacientRepository.findById(hospitalizationRequestDTO.medicalRecord_id);
