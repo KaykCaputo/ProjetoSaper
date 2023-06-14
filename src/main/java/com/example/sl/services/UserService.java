@@ -19,9 +19,9 @@ public class UserService {
 
     public Object getAllByName(String name){
         if(name.equals("")) {
-            return userRepository.findAll().stream().map((client -> new ClientResponseDTO(client)));
+            return userRepository.findAll().stream().map((user -> new UserResponseDTO(user)));
         }else{
-            return userRepository.findAllByNameContaining(name).stream().map((client -> new ClientResponseDTO(client)));
+            return userRepository.findAllByNameContaining(name).stream().map((user -> new UserResponseDTO(user)));
         }
     }
 
