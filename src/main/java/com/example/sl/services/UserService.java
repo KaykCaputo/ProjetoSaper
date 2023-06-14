@@ -59,8 +59,8 @@ public class UserService {
                 user.setPassword(userRequestDTO.password);
             }
 
-            if(userRequestDTO.name!=null) {
-                user.setName(userRequestDTO.name);
+            if(userRequestDTO.username!=null) {
+                user.setUsername(userRequestDTO.username);
             }
 
             return ResponseEntity.status(HttpStatus.OK).body(new UserResponseDTO(userRepository.save(user)));
@@ -69,9 +69,9 @@ public class UserService {
 
     @Transactional
     public ResponseEntity<Object> delete(Long id) {
-        Optional<User> clientOptional = userRepository.findById(id);
+        Optional<User> userOptional = userRepository.findById(id);
 
-        userRepository.delete(clientOptional.get());
+        userRepository.delete(userOptional.get());
         return ResponseEntity.status(HttpStatus.OK).build();
     }
 }
