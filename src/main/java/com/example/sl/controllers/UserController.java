@@ -24,9 +24,9 @@ public class UserController {
     }
 
     @PostMapping
-    public Object save(@RequestBody UserRequestDTO clientRequestDTO){
+    public Object save(@RequestBody UserRequestDTO userRequestDTO){
 
-        return userService.save(clientRequestDTO);
+        return userService.save(userRequestDTO);
     }
 
     @PutMapping("/{id}")
