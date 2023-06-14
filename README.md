@@ -4,8 +4,6 @@
 
 ERD: https://lucid.app/lucidchart/67d9cad5-ae58-413d-a89a-deeb503fe604/edit?viewport_loc=-412%2C28%2C3408%2C1716%2C0_0&invitationId=inv_cb6ae705-8f7e-43c3-90e3-60a2d2d39094
 
-Protótipo de telas: https://www.canva.com/design/DAFktkgpFVA/rYvingvrfnDFrG8YryfboQ/edit?utm_content=DAFktkgpFVA&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton
-
 ## Sistema de Controle e reserva de leitos
 
 A gestão de leitos é um assunto muito importante para um hospital ou clínica,  pois através da visualização e monitoramento constante do uso das camas, ou seja, os leitos ocupados, disponíveis, reservados, em limpeza, dentre outros, pode-se combater a ociosidade dos leitos ao aprimorar o planejamento para o seu uso.
