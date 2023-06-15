@@ -7,19 +7,19 @@ import jakarta.validation.constraints.Size;
 
 public class UserRequestDTO {
     Long user_id;
-    @Size(min = 5, max = 50, message = "Tamanho do nome deve ser entre 5 e 50")
-    @NotBlank(message = "Nome não pode ser em branco")
+    @Size(min = 5, max = 50, message = "The username must be between 5 and 50 characters")
+    @NotBlank(message = "username can't be blank")
     public String username;
 
-    @Size(min = 3, max = 10, message = "Password tem tamanho entre 3 e 10")
-    @NotBlank(message = "password não pode ser em branco")
+    @Size(min = 3, max = 10, message = "Password must be between 3 and 10 characters")
+    @NotBlank(message = "Password can't be blank")
     public String password;
 
     @NotBlank
     public  String repeated_password;
 
-    @Email(message = "login deve ser um email")
-    @NotBlank(message = "login não pode ser em branco")
+    @Email(message = "Email to login")
+    @NotBlank(message = "Login can't be blank")
     public String login;
 
     @Email
