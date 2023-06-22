@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <style>
+    /* Estilos para o menu superior e botão de abrir o menu lateral */
+    .topnav {
+      background-color: #333;
+      overflow: hidden;
+    }
+
+    .topnav a {
+      float: right;
+      color: #fff;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+      font-size: 18px;
+    }
+
+    .topnav a:hover {
+      background-color: #ddd;
+      color: #333;
+    }
+
+    .topnav .openbtn {
+      float: left;
+      cursor: pointer;
+      padding: 14px 16px;
+      font-size: 18px;
+      border: none;
+      background-color: #333;
+      color: #fff;
+    }
+
+    .topnav .openbtn:hover {
+      background-color: #ddd;
+      color: #333;
+    }
+
+    /* Estilos para o menu lateral */
+    .sidenav {
+      height: 100%;
+      width: 0;
+      position: fixed;
+      z-index: 1;
+      top: 0;
+      left: 0;
+      background-color: #111;
+      overflow-x: hidden;
+      transition: 0.5s;
+      padding-top: 60px;
+    }
+
+    .sidenav a {
+      padding: 8px 8px 8px 32px;
+      text-decoration: none;
+      font-size: 16px;
+      color: #818181;
+      display: block;
+      transition: 0.3s;
+    }
+
+    .sidenav a:hover {
+      color: #f1f1f1;
+    }
+
+    .sidenav .closebtn {
+      position: absolute;
+      top: 0;
+      right: 25px;
+      font-size: 36px;
+      margin-left: 50px;
+    }
+
+    .sidenav .logout-btn {
+      position: absolute;
+      bottom: 20px;
+      left: 20px;
+    }
+
+    @media screen and (max-height: 450px) {
+      .sidenav {
+        padding-top: 15px;
+      }
+
+      .sidenav a {
+        font-size: 18px;
+      }
+    }
+
+    /* Estilos para o conteúdo das páginas */
+    .content {
+      margin-left: 0; /* Removido o valor fixo */
+      padding: 20px;
+      transition: 0.5s; /* Adicionada transição suave */
+    }
+
+    .content-with-sidebar {
+      margin-left: 250px; /* Espaço para o menu lateral */
+    }
+
+    #leitos table {
+      width: 100%;
+    }
+
+    #leitos th,
+    #leitos td {
+      padding: 10px;
+      text-align: left;
+    }
+
+    #leitos th {
+      background-color: #f2f2f2;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Menu superior -->
+<div class="topnav">
+  <a href="#" class="openbtn" onclick="toggleNav()">☰</a>
+  <a href="#">Contato</a>
+  <a href="#">Sobre</a>
+  <a href="#">Página Inicial</a>
+</div>
+
+<!-- Menu lateral -->
+<div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0);" onclick="mostrarPagina('inicio')">Link 1</a>
+  <a href="javascript:void(0);" onclick="mostrarPagina('pacientes')">Link 2</a>
+  <a href="javascript:void(0);" onclick="mostrarPagina('leitos')">Link 3</a>
+  <a href="#" class="logout-btn" onclick="logout()"><span class="glyphicon glyphicon-log-out"></span> Sair</a>
+</div>
+
+<!-- Página de Início -->
+<div id="inicio" class="content">
+  <h1>Bem-vindo ao Hospital XYZ</h1>
+  <p>Serviços de saúde de qualidade para a sua família</p>
+  <img src="hospital-image.jpg" alt="Imagem do hospital">
+</div>
+
+<!-- Página de Pacientes -->
+<div id="pacientes" class="content" style="display: none;">
+  <h1>Prontuário do Paciente</h1>
+  <h2>Informações Pessoais:</h2>
+  <ul>
+    <li><strong>Nome:</strong> João Silva</li>
+    <li><strong>Data de Nascimento:</strong> 01/01/1980</li>
+    <li><strong>Gênero:</strong> Masculino</li>
+    <li><strong>CPF:</strong> 123.456.789-00</li>
+    <li><strong>Endereço:</strong> Rua ABC, 123</li>
+  </ul>
+
+  <h2>Prontuário:</h2>
+  <p>Aqui estão as informações clínicas relevantes do paciente, histórico médico, diagnósticos, tratamentos, etc.</p>
+</div>
+
+<!-- Página de Leitos -->
+<div id="leitos" class="content" style="display: none;">
+  <h1>Leitos do Hospital</h1>
+  <table>
+    <tr>
+      <th>Leito</th>
+      <th>Status</th>
+    </tr>
+    <tr>
+      <td>Leito 1</td>
+      <td>Ocupado</td>
+    </tr>
+    <tr>
+      <td>Leito 2</td>
+      <td>Livre</td>
+    </tr>
+    <tr>
+      <td>Leito 3</td>
+      <td>Livre</td>
+    </tr>
+  </table>
+</div>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+  // JavaScript
+  function mostrarPagina(pagina) {
+    var paginas = document.getElementsByClassName("content");
+    for (var i = 0; i < paginas.length; i++) {
+      paginas[i].style.display = "none";
+    }
+    document.getElementById(pagina).style.display = "block";
+  }
+
+  function toggleNav() {
+    var sidenav = document.getElementById("mySidenav");
+    var openbtn = document.getElementsByClassName("openbtn")[0];
+    var content = document.getElementsByClassName("content");
+
+    if (sidenav.style.width === "250px") {
+      sidenav.style.width = "0";
+      openbtn.style.marginLeft = "0";
+
+      // Remove a classe para suavizar a transição
+      for (var i = 0; i < content.length; i++) {
+        content[i].classList.remove("content-with-sidebar");
+      }
+    } else {
+      sidenav.style.width = "250px";
+      openbtn.style.marginLeft = "250px";
+
+      // Adiciona a classe para suavizar a transição
+      for (var i = 0; i < content.length; i++) {
+        content[i].classList.add("content-with-sidebar");
+      }
+    }
+  }
+
+  function logout() {
+    // Lógica para efetuar o logout
+    alert("Você foi desconectado.");
+  }
+</script>
+
+</body>
+</html>
