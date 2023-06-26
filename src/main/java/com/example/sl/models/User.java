@@ -1,6 +1,6 @@
 package com.example.sl.models;
-import jakarta.persistence.*;
 
+import jakarta.persistence.*;
 
 @Entity
 public class User {
@@ -54,4 +54,5 @@ public class User {
     public void setEmail(String email) {
         this.email = email;
     }
+
 }
