@@ -1,6 +1,5 @@
 package com.example.sl.dto.User;
 import com.example.sl.models.User;
-
 public class UserResponseDTO {
     Long user_id;
     String username;
