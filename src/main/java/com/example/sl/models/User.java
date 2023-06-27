@@ -1,5 +1,6 @@
 package com.example.sl.models;
 
+import com.example.sl.dto.User.UserRequestDTO;
 import jakarta.persistence.*;
 
 @Entity
@@ -21,6 +22,10 @@ public class User {
     }
 
     public User() {
+    }
+
+    public User(UserRequestDTO userRequestDTO) {
+
     }
 
     public Long getUser_id() {

@@ -1,7 +1,7 @@
 package com.example.sl.services;
 
-import com.example.sl.dto.user.UserRequestDTO;
-import com.example.sl.dto.user.UserResponseDTO;
+import com.example.sl.dto.User.UserRequestDTO;
+import com.example.sl.dto.User.UserResponseDTO;
 import com.example.sl.models.User;
 import com.example.sl.repository.UserRepository;
 import jakarta.transaction.Transactional;
@@ -19,9 +19,9 @@ public class UserService {
 
     public Object getAllByName(String name){
         if(name.equals("")) {
-            return userRepository.findAll().stream().map((user -> new UserResponseDTO(user)));
+            return userRepository.findAll().stream().map((UserResponseDTO::new));
         }else{
-            return userRepository.findAllByNameContaining(name).stream().map((user -> new UserResponseDTO(user)));
+            return userRepository.findAllByNameContaining(name).stream().map((UserResponseDTO::new));
         }
     }
 
@@ -31,19 +31,13 @@ public class UserService {
 
         user = userRepository.save(user);
 
-        UserResponseDTO userResponseDTO = new UserResponseDTO(user);
-
-        return userResponseDTO;
+        return new UserResponseDTO(user);
     }
 
     public ResponseEntity<Object> findById(Long id) {
         Optional<User> userOptional = userRepository.findById(id);
 
-        if(userOptional.isEmpty()){
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("User not found");
-        }else{
-            return ResponseEntity.status(HttpStatus.OK).body(new UserResponseDTO(userOptional.get()));
-        }
+        return userOptional.<ResponseEntity<Object>>map(user -> ResponseEntity.status(HttpStatus.OK).body(new UserResponseDTO(user))).orElseGet(() -> ResponseEntity.status(HttpStatus.NOT_FOUND).body("User not found"));
     }
 
     @Transactional

@@ -25,7 +25,9 @@ public class UserRequestDTO {
     @Email
     public  String email;
 
-    public UserRequestDTO(){}
+    public UserRequestDTO(){
+
+    }
 
     public UserRequestDTO(String username, String password, String repeated_password, String login, String email) {
         this.username = username;

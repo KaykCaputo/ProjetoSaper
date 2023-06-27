@@ -1,7 +1,7 @@
 package com.example.sl.config.security;
 
+import com.example.sl.models.User;
 import com.example.sl.repository.UserRepository;
-import org.apache.catalina.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -17,12 +17,15 @@ public class AuthenticatorService implements UserDetailsService {
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        Optional<User> UserOptional = UserRepository.findByLogin(username);
+
+        //Optional<User> UserOptional = UserRepository.findByLogin(username);
+        Optional<User> UserOptional;
+        UserOptional = UserRepository.findByLogin(username);
 
         if(UserOptional.isEmpty()){
             throw new UsernameNotFoundException("User not found");
         }else{
-            return UserOptional.get();
+            return (UserDetails) UserOptional.get();
         }
     }
 }
