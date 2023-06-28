@@ -119,6 +119,71 @@
     #leitos th {
       background-color: #f2f2f2;
     }
+    /*Página de Pacientes */
+    
+
+        h1 {
+            text-align: center;
+            color: #333;
+            padding: 20px 0;
+        }
+        h5 {
+          text-align: center;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+            background-color: #fff;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #f2f2f2;
+            color: #333;
+        }
+
+        .internacoes {
+            margin-bottom: 20px;
+            background-color: #fff;
+            padding: 20px;
+        }
+
+        .internacoes table {
+            margin-bottom: 20px;
+            width: 100%;
+            border: 1px solid #ddd;
+            border-collapse: collapse;
+        }
+
+        .internacoes th {
+            background-color: #f2f2f2;
+            color: #333;
+            padding: 10px;
+            border: 1px solid #ddd;
+        }
+
+        .internacoes td {
+            padding: 10px;
+            border: 1px solid #ddd;
+        }
+
+        .internacoes caption {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .internacoes td:nth-child(1),
+        .internacoes td:nth-child(2),
+        .internacoes td:nth-child(3) {
+            width: 33%;
+        }
   </style>
 </head>
 <body>
@@ -161,18 +226,73 @@
 
 <!-- Página de Pacientes -->
 <div id="pacientes" class="content" style="display: none;">
-  <h1>Prontuário do Paciente</h1>
-  <h2>Informações Pessoais:</h2>
-  <ul>
-    <li><strong>Nome:</strong> João Silva</li>
-    <li><strong>Data de Nascimento:</strong> 01/01/1980</li>
-    <li><strong>Gênero:</strong> Masculino</li>
-    <li><strong>CPF:</strong> 123.456.789-00</li>
-    <li><strong>Endereço:</strong> Rua ABC, 123</li>
-  </ul>
+  <h1>Página de Pacientes</h1>
+    
+    <table>
+        <h2>Informações do Paciente</h2>
+        <tr>
+            <th>Nome</th>
+            <th>Idade</th>
+            <th>Sexo</th>
+            <th>Endereço</th>
+            <th>Telefone</th>
+            <th>Email</th>
+        </tr>
+        <tr>
+            <td>Maria Silva</td>
+            <td>40 anos</td>
+            <td>Feminino</td>
+            <td>Rua Principal, 123</td>
+            <td>(11) 1234-5678</td>
+            <td>maria@exemplo.com</td>
+        </tr>
+    </table>
+    
+    <div class="internacoes">
+        <h2>Internações</h2>
+        
+        <table>
+            <h5>1ª Internação</h5>
+            <tr>
+                <th>Motivo</th>
+                <th>Data</th>
+                <th>Leito</th>
+            </tr>
+            <tr>
+                <td>Fratura no braço</td>
+                <td>12/05/2023</td>
+                <td>102</td>
+            </tr>
+        </table>
+        
+        <table>
+          <h5>2ª Internação</h5>
+            <tr>
+                <th>Motivo</th>
+                <th>Data</th>
+                <th>Leito</th>
+            </tr>
+            <tr>
+                <td>Pneumonia</td>
+                <td>28/06/2023</td>
+                <td>215</td>
+            </tr>
+        </table>
 
-  <h2>Prontuário:</h2>
-  <p>Aqui estão as informações clínicas relevantes do paciente, histórico médico, diagnósticos, tratamentos, etc.</p>
+        <table>
+          <h5>3ª Internação</h5>
+            <tr>
+                <th>Motivo</th>
+                <th>Data</th>
+                <th>Leito</th>
+            </tr>
+            <tr>
+                <td>Apêndice inflamado</td>
+                <td>10/09/2023</td>
+                <td>305</td>
+            </tr>
+        </table>
+    </div>
 </div>
 
 <!-- Página de Leitos -->

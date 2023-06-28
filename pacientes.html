@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Página de Pacientes</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f2f2f2;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            padding: 20px 0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+            background-color: #fff;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #f2f2f2;
+            color: #333;
+        }
+
+        .internacoes {
+            margin-bottom: 20px;
+            background-color: #fff;
+            padding: 20px;
+        }
+
+        .internacoes table {
+            margin-bottom: 20px;
+            width: 100%;
+            border: 1px solid #ddd;
+            border-collapse: collapse;
+        }
+
+        .internacoes th {
+            background-color: #f2f2f2;
+            color: #333;
+            padding: 10px;
+            border: 1px solid #ddd;
+        }
+
+        .internacoes td {
+            padding: 10px;
+            border: 1px solid #ddd;
+        }
+
+        .internacoes caption {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .internacoes td:nth-child(1),
+        .internacoes td:nth-child(2),
+        .internacoes td:nth-child(3) {
+            width: 33%;
+        }
+    </style>
+</head>
+<body>
+    <h1>Página de Pacientes</h1>
+    
+    <table>
+        <caption>Informações do Paciente</caption>
+        <tr>
+            <th>Nome</th>
+            <th>Idade</th>
+            <th>Sexo</th>
+            <th>Endereço</th>
+            <th>Telefone</th>
+            <th>Email</th>
+        </tr>
+        <tr>
+            <td>Maria Silva</td>
+            <td>40 anos</td>
+            <td>Feminino</td>
+            <td>Rua Principal, 123</td>
+            <td>(11) 1234-5678</td>
+            <td>maria@exemplo.com</td>
+        </tr>
+    </table>
+    
+    <div class="internacoes">
+        <h2>Internações</h2>
+        
+        <table>
+            <caption>1ª Internação</caption>
+            <tr>
+                <th>Motivo</th>
+                <th>Data</th>
+                <th>Leito</th>
+            </tr>
+            <tr>
+                <td>Fratura no braço</td>
+                <td>12/05/2023</td>
+                <td>102</td>
+            </tr>
+        </table>
+        
+        <table>
+            <caption>2ª Internação</caption>
+            <tr>
+                <th>Motivo</th>
+                <th>Data</th>
+                <th>Leito</th>
+            </tr>
+            <tr>
+                <td>Pneumonia</td>
+                <td>28/06/2023</td>
+                <td>215</td>
+            </tr>
+        </table>
+
+        <table>
+            <caption>3ª Internação</caption>
+            <tr>
+                <th>Motivo</th>
+                <th>Data</th>
+                <th>Leito</th>
+            </tr>
+            <tr>
+                <td>Apêndice inflamado</td>
+                <td>10/09/2023</td>
+                <td>305</td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>
+
+
+
