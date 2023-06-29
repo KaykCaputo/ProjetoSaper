@@ -1,7 +1,7 @@
-package com.example.sl.dto.User;
+package com.example.sl.dto.user;
 public class UserRequestDTO {
     Long user_id;
-    String username;
-    String password;
-    String email;
+    public String username;
+    public String password;
+    public String email;
 }

@@ -1,9 +1,9 @@
 package com.example.sl.services;
 
-import com.example.sl.dto.User.UserRequestDTO;
-import com.example.sl.dto.User.UserResponseDTO;
-import com.example.sl.models.User;
-import com.example.sl.repository.UserRepository;
+import com.example.sl.dto.user.UserRequestDTO;
+import com.example.sl.dto.user.UserResponseDTO;
+import com.example.sl.models.Users;
+import com.example.sl.repository.UsersRepository;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -15,57 +15,57 @@ import java.util.Optional;
 @Service
 public class UserService {
     @Autowired
-    UserRepository userRepository;
+    UsersRepository usersRepository;
 
     public Object getAllByName(String name){
         if(name.equals("")) {
-            return userRepository.findAll().stream().map((UserResponseDTO::new));
+            return usersRepository.findAll().stream().map((UserResponseDTO::new));
         }else{
-            return userRepository.findAllByNameContaining(name).stream().map((UserResponseDTO::new));
+            return usersRepository.findAllByUsernameContaining(name).stream().map((UserResponseDTO::new));
         }
     }
 
     @Transactional
     public Object save(UserRequestDTO userRequestDTO){
-        User user = new User(userRequestDTO);
+        Users users = new Users(userRequestDTO);
 
-        user = userRepository.save(user);
+        users = usersRepository.save(users);
 
-        return new UserResponseDTO(user);
+        return new UserResponseDTO(users);
     }
 
     public ResponseEntity<Object> findById(Long id) {
-        Optional<User> userOptional = userRepository.findById(id);
+        Optional<Users> userOptional = usersRepository.findById(id);
 
-        return userOptional.<ResponseEntity<Object>>map(user -> ResponseEntity.status(HttpStatus.OK).body(new UserResponseDTO(user))).orElseGet(() -> ResponseEntity.status(HttpStatus.NOT_FOUND).body("User not found"));
+        return userOptional.<ResponseEntity<Object>>map(users -> ResponseEntity.status(HttpStatus.OK).body(new UserResponseDTO(users))).orElseGet(() -> ResponseEntity.status(HttpStatus.NOT_FOUND).body("User not found"));
     }
 
     @Transactional
     public Object update(Long id, UserRequestDTO userRequestDTO) {
-        Optional<User> userOptional = userRepository.findById(id);
+        Optional<Users> userOptional = usersRepository.findById(id);
 
         if(userOptional.isEmpty()){
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("User not found");
         }else{
-            User user= userOptional.get();
+            Users users = userOptional.get();
 
-            if(userRequestDTO.password!=null) {
-                user.setPassword(userRequestDTO.password);
+            if(userRequestDTO.password != null) {
+                users.setPassword(userRequestDTO.password);
             }
 
-            if(userRequestDTO.username!=null) {
-                user.setUsername(userRequestDTO.username);
+            if(userRequestDTO.username != null) {
+                users.setUsername(userRequestDTO.username);
             }
 
-            return ResponseEntity.status(HttpStatus.OK).body(new UserResponseDTO(userRepository.save(user)));
+            return ResponseEntity.status(HttpStatus.OK).body(new UserResponseDTO(usersRepository.save(users)));
         }
     }
 
     @Transactional
     public ResponseEntity<Object> delete(Long id) {
-        Optional<User> userOptional = userRepository.findById(id);
+        Optional<Users> userOptional = usersRepository.findById(id);
 
-        userRepository.delete(userOptional.get());
+        usersRepository.delete(userOptional.get());
         return ResponseEntity.status(HttpStatus.OK).build();
     }
 }
