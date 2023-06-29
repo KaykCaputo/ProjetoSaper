@@ -1,0 +1,6 @@
+INSERT INTO ROLE(ROLE) VALUES ('ROLE_ADMIN');
+INSERT INTO ROLE(ROLE) VALUES ('ROLE_CLIENT');
+
+
+INSERT INTO USERS(username, email, password) values ('adm', 'email', '$2a$10$n9XbxL0/MSzRqD.3d2MbsepicmJ4swlmDAMjoLUK1Nh4QUV08LJJG');
+INSERT INTO USER_ROLE(user_id, role_id) VALUES (1, 1);
