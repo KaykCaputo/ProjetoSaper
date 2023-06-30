@@ -42,6 +42,33 @@
     }
 
     /* Estilos para o menu lateral */
+        .margemdaborda{
+          border:25px solid;
+          border-color: #B7D6CE}
+        .bordapessoa{
+            border: 5px solid;
+            border-color: #13898B;
+            border-radius: 7px;
+            width: 200px;
+            height:270px;
+            text-align: center;
+            
+        }
+        .imgpessoa{
+            width: 130px;
+            height: 130px;
+            padding-top: 0px;
+            border-radius: 100%;
+            
+        }
+        .divdaimg{padding-top: 10px; }
+        .bemvindo{
+          padding-top: 20px;
+          text-align: center;
+          font-size: 20px;
+          color: #144759;
+          font-weight:600;
+        }
     
     .sidenav {
       height: 100%;
@@ -53,7 +80,7 @@
       background-color: #B7D6CE;
       overflow-x: hidden;
       transition: 0.5s;
-      padding-top: 260px;
+      padding-top: 10px;
       padding-left: 0px;
     }
 
@@ -119,6 +146,18 @@
     #leitos th {
       background-color: #f2f2f2;
     }
+    /* inicial*/
+
+    .imgdefundo{
+      background-image: url(plano\ de\ fundo.jpg);
+      width: 100%;
+      height: 100%;
+      border:0px;
+    }
+    #inicio .content{
+      border: 0px;
+    }
+
     /*Página de Pacientes */
     
 
@@ -184,6 +223,7 @@
         .internacoes td:nth-child(3) {
             width: 33%;
         }
+
   </style>
 </head>
 <body>
@@ -196,6 +236,19 @@
 
 <!-- Menu lateral -->
   <div id="mySidenav" class="sidenav">
+    <div class="margemdaborda">
+        <div class="bordapessoa">
+          <div class="divdaimg">
+            <img class="imgpessoa" src="vemdoback.png" width="30px" height="30px">
+          </div>
+          <div class="bemvindo">
+            <div>Seja bem-vindo</div>
+            <div class="nomeblack">nome do back</div>
+          </div> 
+        </div>
+    </div>
+    
+
     <a href="javascript:void(0);" onclick="mostrarPagina('inicio')">
       <div class="link-container">
         <i class="fas fa-home link-icon"></i>
@@ -219,9 +272,11 @@
 
 <!-- Página de Início -->
 <div id="inicio" class="content">
-  <h1>Bem-vindo ao Hospital XYZ</h1>
-  <p>Serviços de saúde de qualidade para a sua família</p>
-  <img src="hospital-image.jpg" alt="Imagem do hospital">
+  <div class="imgdefundo">
+    <h1>Bem-vindo ao Hospital XYZ</h1>
+    <p>Serviços de saúde de qualidade para a sua família</p>
+    <img src="hospital-image.jpg" alt="Imagem do hospital">
+  </div>
 </div>
 
 <!-- Página de Pacientes -->
