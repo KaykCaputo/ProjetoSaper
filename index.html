@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="style.css">
+  <script src="java.js"></script>
+</head>
+<body>
+
+<!-- Menu superior -->
+<div class="topnav">
+  <a href="#" class="openbtn" onclick="toggleNav()">☰</a>
+  <a href="#"><img src="logofront.png" alt="some text" width=322 height=48></a>
+</div>
+
+<!-- Menu lateral -->
+  <div id="mySidenav" class="sidenav">
+    <div class="margemdaborda">
+        <div class="bordapessoa">
+          <div class="divdaimg">
+            <img class="imgpessoa" src="vemdoback.png" width="30px" height="30px">
+          </div>
+          <div class="bemvindo">
+            <div>Seja bem-vindo</div>
+            <div class="nomeblack">nome do back</div>
+          </div> 
+        </div>
+    </div>
+    
+
+    <a href="javascript:void(0);" onclick="mostrarPagina('inicio')">
+      <div class="link-container">
+        <i class="fas fa-home link-icon"></i>
+        <span class="link-text">Inicio</span>
+      </div>
+    </a>
+    <a href="javascript:void(0);" onclick="mostrarPagina('pacientes')">
+      <div class="link-container">
+        <i class="fas fa-user link-icon"></i>
+        <span class="link-text">Pacientes</span>
+      </div>
+    </a>
+    <a href="javascript:void(0);" onclick="mostrarPagina('leitos')">
+      <div class="link-container">
+        <i class="fas fa-bed link-icon"></i>
+        <span class="link-text">Leitos</span>
+      </div>
+    </a>
+    <a href="javascript:void(0);" onclick="mostrarPagina('medicos')">
+      <div class="link-container">
+        <i class="fas fa-bed link-icon"></i>
+        <span class="link-text">Medicos</span>
+      </div>
+    </a>
+    <a href="#" class="logout-btn"> Sair  <i class="fas fa-sign-out-alt"></i></a>
+  </div>
+
+<!-- Página de Início -->
+<div id="inicio" class="content">
+  <div class="imgdefundo">
+    <h1>Bem-vindo ao Hospital XYZ</h1>
+    <p>Serviços de saúde de qualidade para a sua família</p>
+    <img src="hospital-image.jpg" alt="Imagem do hospital">
+  </div>
+</div>
+
+<!-- Página de Pacientes -->
+<div id="pacientes" class="content" style="display: none;">
+  <h1>Página de Pacientes</h1>
+    
+    <table>
+        <h2>Informações do Paciente</h2>
+        <tr>
+            <th>Nome</th>
+            <th>Idade</th>
+            <th>Sexo</th>
+            <th>Endereço</th>
+            <th>Telefone</th>
+            <th>Email</th>
+        </tr>
+        <tr>
+            <td>Maria Silva</td>
+            <td>40 anos</td>
+            <td>Feminino</td>
+            <td>Rua Principal, 123</td>
+            <td>(11) 1234-5678</td>
+            <td>maria@exemplo.com</td>
+        </tr>
+    </table>
+    
+    <div class="internacoes">
+        <h2>Internações</h2> 
+        
+        <table>
+            <h5>1ª Internação</h5>
+            <tr>
+                <th>Nome do paciente</th>
+                <th>Motivo</th>
+                <th>Data</th>
+                <th>Leito</th>
+            </tr>
+            <tr>
+                <td>Marla singer</td>
+                <td>Fratura no braço(atropelada)</td>
+                <td>12/05/2023</td>
+                <td>102</td>
+            </tr>
+        </table>
+        
+        <table>
+          <h5>2ª Internação</h5>
+            <tr>
+                <th>Nome do paciente</th>
+                <th>Motivo</th>
+                <th>Data</th>
+                <th>Leito</th>
+            </tr>
+            <tr>
+                <td>seila</td>
+                <td>Pneumonia</td>
+                <td>28/06/2023</td>
+                <td>215</td>
+            </tr>
+        </table>
+
+        <table>
+          <h5>3ª Internação</h5>
+            <tr>
+                <th>Nome do paciente</th>
+                <th>Motivo</th>
+                <th>Data</th>
+                <th>Leito</th>
+            </tr>
+            <tr>
+                <td>seila2</td>
+                <td>Apêndice inflamado</td>
+                <td>10/09/2023</td>
+                <td>305</td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<!-- Página de Leitos -->
+<div id="leitos" class="content" style="display: none;">
+  <h1>Leitos do Hospital</h1>
+  <table>
+    <tr>
+      <th>Leito</th>
+      <th>Status</th>
+      <th>Fugulin</th>
+    </tr>
+    <tr>
+      <td>Leito 1</td>
+      <td>Ocupado</td>
+      <td>Morendo</td>
+    </tr>
+    <tr>
+      <td>Leito 2</td>
+      <td>Livre</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Leito 3</td>
+      <td>Livre</td>
+      <td></td>
+    </tr>
+  </table>
+</div>
+
+<!-- Página de Medicos -->
+<div id="medicos" class="content" style="display: none;">
+  <h1>Página de Medicos</h1>
+    
+    
+    <div class="internacoes">
+        <h2>Internações 
+
+          <button class="btninterna">
+            <a href="javascript:void(0);" onclick="mostrarPagina('interna')">
+            <div class="link-container">
+
+              
+
+              <span class="link-text" style="color: #333;">  Nova Internação</span>
+            </div>
+            </a>
+          </button>
+        
+        </h2>
+        
+        <table>
+            <h5>1ª Internação</h5>
+            <tr>
+                <th>Nome do paciente</th>
+                <th>Motivo</th>
+                <th>Data</th>
+                <th>Leito</th>
+            </tr>
+            <tr>
+                <td>Marla singer</td>
+                <td>Fratura no braço(atropelada)</td>
+                <td>12/05/2023</td>
+                <td>102</td>
+            </tr>
+        </table>
+        
+        <table>
+          <h5>2ª Internação</h5>
+            <tr>
+                <th>Nome do paciente</th>
+                <th>Motivo</th>
+                <th>Data</th>
+                <th>Leito</th>
+            </tr>
+            <tr>
+                <td>seila</td>
+                <td>Pneumonia</td>
+                <td>28/06/2023</td>
+                <td>215</td>
+            </tr>
+        </table>
+
+        <table>
+          <h5>3ª Internação</h5>
+            <tr>
+                <th>Nome do paciente</th>
+                <th>Motivo</th>
+                <th>Data</th>
+                <th>Leito</th>
+            </tr>
+            <tr>
+                <td>seila2</td>
+                <td>Apêndice inflamado</td>
+                <td>10/09/2023</td>
+                <td>305</td>
+            </tr>
+        </table>
+    </div>
+</div>
+<!-- Página de Novas internacoes -->
+<div id="interna" class="content" style="display: none;">
+  <div class="container">
+    <h3>Nova Internação</h3>
+    <form>
+      <div class="form-group">
+        <label for="nome">CPF do paciente:</label>
+        <input type="text" id="nome" name="nome" required>
+      </div>
+      <div class="form-group">
+        <label for="nome">Nome do Paciente:</label>
+        <input type="text" id="nome" name="nome" required>
+      </div>
+      <div class="form-group">
+        <label for="motivo">Motivo da Internação:</label>
+        <textarea id="motivo" name="motivo" required></textarea>
+      </div>
+      <div class="form-group">
+        <label for="data">Data de Internação:</label>
+        <input type="date" id="data" name="data" required>
+      </div>
+      <div class="form-group">
+        <label for="leito">Leito do Paciente:</label>
+        <input type="text" id="leito" name="leito" required>
+      </div>
+      <div class="form-group">
+        <label for="situacao">Situação do Paciente(Fugulin):</label>
+        <input type="text" id="situacao" name="situacao" required>
+      </div>
+      <div class="button-container">
+        <button type="submit" class="btn-submit">Registrar Internação</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+
+</body>
+</html>
+
