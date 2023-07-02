@@ -14,7 +14,7 @@ public class Bed {
     Boolean occupied;
     String type;
 
-    @OneToMany(mappedBy = "_bed", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "bed", cascade = CascadeType.ALL)
     private List<Hospitalization> hospitalizationList;
 
     public Bed() {
