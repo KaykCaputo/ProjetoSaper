@@ -13,7 +13,7 @@ export default function LoginPage(){
     <link rel='stylesheet' type='text/css' media='screen' href='./loginpage.css'/>
     <script src='main.js'></script>
     </Helmet>
-    <body>
+    <body className='loginbody'>
         <div id="card">
             <div id="card-content">
             <div id="card-title">

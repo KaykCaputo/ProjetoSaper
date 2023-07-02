@@ -1,10 +1,10 @@
 import React from 'react';
 import logo from './logo.svg';
-import LoginPage from './components/loginPage/loginpage';
+import MyRoutes from './router/router';
 
 function App() {
   return (
-    <LoginPage/>
+    <MyRoutes/>
   );
 }
 
