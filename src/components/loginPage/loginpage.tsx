@@ -33,7 +33,7 @@ export default function LoginPage(){
                 <a href="#">
                 <legend id="forgot-pass">Forgot password?</legend>
                 </a>
-                <input id="submit" type="submit" name="submit" value="LOGIN" />
+                <input id="submit" type="submit" name="submit" value="LOGIN"/>
                 <a href="#" id="signup">Don't have an Account? Sign Up</a>
             </form>
             </div>

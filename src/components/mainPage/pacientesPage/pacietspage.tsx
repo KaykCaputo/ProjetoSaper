@@ -16,7 +16,7 @@ export default function PacientsPage(){
         <body>
         <Sidebar/>
         <div id="pacientes" className="content" style={{display: "none;"}}>
-        <h1>Página de Pacientes</h1>
+        <h1>Página do Paciente</h1>
         <h6 style={{width:"30%", fontSize:"1.4vw"}}>Procurando um paciente especifico? Insira o ID do prontuario:</h6>
         <input type='text' style={{width:"30%", float:"left", height:"20%"}}></input>
                   
