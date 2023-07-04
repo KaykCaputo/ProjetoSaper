@@ -1,6 +1,7 @@
 import React from 'react'
 import Helmet from 'react-helmet'
 import Sidebar from '../../sidebar/sidebar'
+import BedDetails from './components/bedDetails'
 import "../main.css"
 
 export default function BedsPage(){
@@ -23,21 +24,9 @@ export default function BedsPage(){
             <th>Status</th>
             <th>Fugulin</th>
             </tr>
-            <tr>
-            <td>Leito 1</td>
-            <td>Ocupado</td>
-            <td>Morendo</td>
-            </tr>
-            <tr>
-            <td>Leito 2</td>
-            <td>Livre</td>
-            <td></td>
-            </tr>
-            <tr>
-            <td>Leito 3</td>
-            <td>Livre</td>
-            <td></td>
-            </tr>
+            <BedDetails bedId={1} fugulim='Grave' status={true}/>
+            <BedDetails bedId={2} fugulim='' status={false}/>
+            <BedDetails bedId={3} fugulim='Moderado' status={true}/>
         </table>
         </div>
       </body>

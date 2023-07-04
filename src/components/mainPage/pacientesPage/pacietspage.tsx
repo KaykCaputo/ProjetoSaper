@@ -2,6 +2,7 @@ import React from 'react'
 import Helmet from 'react-helmet'
 import Sidebar from '../../sidebar/sidebar'
 import { Link } from 'react-router-dom'
+import PacientDetails from './components/pacientDetails'
 
 export default function PacientsPage(){
     return(
@@ -20,26 +21,8 @@ export default function PacientsPage(){
         <h6 style={{width:"30%", fontSize:"1.4vw"}}>Procurando um paciente especifico? Insira o ID do prontuario:</h6>
         <input type='text' style={{width:"30%", float:"left", height:"20%"}}></input>
                   
-          <table>
-              <h2>Informações do Paciente</h2>
-              <tr>
-                  <th>Nome</th>
-                  <th>Idade</th>
-                  <th>Sexo</th>
-                  <th>Endereço</th>
-                  <th>Telefone</th>
-                  <th>Email</th>
-              </tr>
-              <tr>
-                  <td>Maria Silva</td>
-                  <td>40 anos</td>
-                  <td>Feminino</td>
-                  <td>Rua Principal, 123</td>
-                  <td>(11) 1234-5678</td>
-                  <td>maria@exemplo.com</td>
-              </tr>
-          </table>
-          
+        <PacientDetails age={18} address='1' name='Kayk Caputo' email='emaillegal@email.com' gender='Masculino' phoneNumber='(78)92471-3578'/>
+
           <div className="internacoes">
               <h2 style={{float:"left"}}>Internações</h2> 
             <Link to="internation" style={{float:"right"}}>
@@ -53,12 +36,14 @@ export default function PacientsPage(){
                       <th>Motivo</th>
                       <th>Data</th>
                       <th>Leito</th>
+                      <th>Protocolo</th>
                   </tr>
                   <tr>
                       <td>Marla singer</td>
                       <td>Fratura no braço(atropelada)</td>
                       <td>12/05/2023</td>
                       <td>102</td>
+                      <td>1990909</td>
                   </tr>
               </table>
               
@@ -69,12 +54,14 @@ export default function PacientsPage(){
                       <th>Motivo</th>
                       <th>Data</th>
                       <th>Leito</th>
+                      <th>Protocolo</th>
                   </tr>
                   <tr>
                       <td>seila</td>
                       <td>Pneumonia</td>
                       <td>28/06/2023</td>
                       <td>215</td>
+                      <td>1990909</td>
                   </tr>
               </table>
       
@@ -85,12 +72,14 @@ export default function PacientsPage(){
                       <th>Motivo</th>
                       <th>Data</th>
                       <th>Leito</th>
+                      <th>Protocolo</th>
                   </tr>
                   <tr>
                       <td>seila2</td>
                       <td>Apêndice inflamado</td>
                       <td>10/09/2023</td>
                       <td>305</td>
+                      <td>1990909</td>
                   </tr>
               </table>
           </div>

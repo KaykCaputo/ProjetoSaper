@@ -3,6 +3,7 @@ import Helmet from 'react-helmet'
 import { toggleNav } from './script'
 import "./sidebar.css"
 import { Link } from 'react-router-dom'
+import Dropdown from 'react-bootstrap/Dropdown';
  
  
  export default function Sidebar(){
@@ -39,18 +40,27 @@ import { Link } from 'react-router-dom'
                 <span className="link-text">  Inicio</span>
               </div>
             </Link>  
-            <Link to="/pacients">
-            <div className="link-container">
-                <i className="fas fa-user link-icon"></i>
-                <span className="link-text">  Pacientes</span>
-              </div>
-            </Link> 
-            <Link to="/beds">
-            <div className="link-container">
-                <i className="fas fa-bed link-icon"></i>
-                <span className="link-text">  Leitos</span>
-              </div>
-            </Link> 
+
+            <Dropdown className="link-container" style={{marginLeft:"7%", marginBottom:"6%"}}>
+            <Dropdown.Toggle variant="transparent" id="dropdown-basic">
+            <i className="fas fa-user link-icon"></i>
+            <span className="link-text" style={{fontSize:"20px",padding:"0% 5% 0% 10%"}}>Pacientes</span>
+            </Dropdown.Toggle>
+            <Dropdown.Menu>
+            <Dropdown.Item><Link to="/pacients/newPaciente" style={{padding:"1% 20% 1% 0%", boxSizing:"content-box", marginBottom:"-7%",fontSize:"19px"}} className="link-text">Novo Paciente</Link></Dropdown.Item>
+            <Dropdown.Item><Link to="/pacients" style={{padding:"1% 20% 1% 0%", boxSizing:"content-box", marginBottom:"-7%",fontSize:"19px"}} className="link-text">Visualizar Existente</Link></Dropdown.Item>
+            </Dropdown.Menu>
+          </Dropdown>
+          <Dropdown className="link-container" style={{marginLeft:"7%", marginBottom:"10%"}}>
+            <Dropdown.Toggle variant="transparent" id="dropdown-basic">
+            <i className="fas fa-bed link-icon"></i>
+            <span className="link-text" style={{fontSize:"20px",padding:"0% 5% 0% 10%"}}>Leitos</span>
+            </Dropdown.Toggle>
+            <Dropdown.Menu>
+            <Dropdown.Item><Link to="/pacients" style={{padding:"1% 20% 1% 0%", boxSizing:"content-box", marginBottom:"-7%",fontSize:"19px"}} className="link-text">Novo Leito</Link></Dropdown.Item>
+            <Dropdown.Item><Link to="/beds" style={{padding:"1% 20% 1% 0%", boxSizing:"content-box", marginBottom:"-7%",fontSize:"19px"}} className="link-text">Visualizar Existente</Link></Dropdown.Item>
+            </Dropdown.Menu>
+          </Dropdown>
             <Link to="/login"  className="logout-btn">
             Sair  <i className="fas fa-sign-out-alt"></i>
             </Link>

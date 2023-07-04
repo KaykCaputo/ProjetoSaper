@@ -80,7 +80,7 @@
     padding: 8px 8px 20px 32px;
     text-decoration: none;
     font-size: 20px;
-    color: #144759;
+    color: #212529;;
     display: block;
     transition: 0.3s;
   }
@@ -96,6 +96,7 @@
     font-size: 36px;
     margin-left: 50px;
   }
+
 
   .sidenav .logout-btn {
     position: absolute;

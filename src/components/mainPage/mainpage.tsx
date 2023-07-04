@@ -20,7 +20,6 @@ export default function BedsPage(){
             <h5 style={{textAlign:"center", marginTop:"1%"}}>Serviços de saúde de qualidade para a sua família</h5>
         </div>
         <h3 style={{textAlign:"center", marginTop:"2%"}}>Seja bem vindo ao nosso sistema, aqui você pode:</h3>
-        </div>
         <div className="row">
       <div className="card green">
         <h2>Gerenciar Leitos</h2>
@@ -49,7 +48,10 @@ export default function BedsPage(){
         </ul>
     </div>
     </div>
-    <h4 style={{textAlign:"center", marginTop:"1%"}}>Qualquer bug/duvida entre em contato com: contatohospialbeds@email.com.br</h4>
+        </div>
+      <div  className="content">
+      <h4 style={{textAlign:"center", marginTop:"1%"}}>Qualquer bug/duvida entre em contato com: contatohospialbeds@email.com.br</h4>
+      </div>
       </body>
       </html>
       )
