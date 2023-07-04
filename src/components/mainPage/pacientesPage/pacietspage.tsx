@@ -3,6 +3,7 @@ import Helmet from 'react-helmet'
 import Sidebar from '../../sidebar/sidebar'
 import { Link } from 'react-router-dom'
 import PacientDetails from './components/pacientDetails'
+import InternationDetails from './components/internationDetails'
 
 export default function PacientsPage(){
     return(
@@ -30,58 +31,17 @@ export default function PacientsPage(){
             </Link>
               
               <table>
-                  <h5>1ª Internação</h5>
+                  <h5>Internações</h5>
                   <tr>
-                      <th>Nome do paciente</th>
                       <th>Motivo</th>
                       <th>Data</th>
                       <th>Leito</th>
                       <th>Protocolo</th>
                   </tr>
-                  <tr>
-                      <td>Marla singer</td>
-                      <td>Fratura no braço(atropelada)</td>
-                      <td>12/05/2023</td>
-                      <td>102</td>
-                      <td>1990909</td>
-                  </tr>
+                  <InternationDetails bed={1} cause='Fratura nos membros superiores' protocol={1} date={new Date}/>
               </table>
               
-              <table>
-                <h5>2ª Internação</h5>
-                  <tr>
-                      <th>Nome do paciente</th>
-                      <th>Motivo</th>
-                      <th>Data</th>
-                      <th>Leito</th>
-                      <th>Protocolo</th>
-                  </tr>
-                  <tr>
-                      <td>seila</td>
-                      <td>Pneumonia</td>
-                      <td>28/06/2023</td>
-                      <td>215</td>
-                      <td>1990909</td>
-                  </tr>
-              </table>
-      
-              <table>
-                <h5>3ª Internação</h5>
-                  <tr>
-                      <th>Nome do paciente</th>
-                      <th>Motivo</th>
-                      <th>Data</th>
-                      <th>Leito</th>
-                      <th>Protocolo</th>
-                  </tr>
-                  <tr>
-                      <td>seila2</td>
-                      <td>Apêndice inflamado</td>
-                      <td>10/09/2023</td>
-                      <td>305</td>
-                      <td>1990909</td>
-                  </tr>
-              </table>
+             
           </div>
       </div>
       </body>
