@@ -20,14 +20,6 @@ export default function InternationPage(){
                 <h3>Nova Internação</h3>
                 <form>
                 <div className="form-group">
-                    <label htmlFor="nome">CPF do paciente:</label>
-                    <input type="text" id="nome" name="nome" required/>
-                </div>
-                <div className="form-group">
-                    <label htmlFor="nome">Nome do Paciente:</label>
-                    <input type="text" id="nome" name="nome" required/>
-                </div>
-                <div className="form-group">
                     <label htmlFor="motivo">Motivo da Internação:</label>
                     <textarea id="motivo" name="motivo" required></textarea>
                 </div>

@@ -18,6 +18,7 @@ export default function BedsPage(){
         <Sidebar/>
         <div id="leitos" className="content" style={{display: "none;"}}>
         <h1>Leitos do Hospital</h1>
+        <button type="button" className="btn btn-danger" style={{marginRight:"0.5%", float:"right"}}>Apagar Leito</button><button type="button" className="btn btn-primary" style={{marginRight:"3%",float:"right"}}>Cadastrar Novo Leito</button>
         <table>
             <tr>
             <th>Leito</th>
