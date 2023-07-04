@@ -16,7 +16,6 @@ interface PacienteDetailsProps{
 export default function PacientDetails({ name, age, gender, address, phoneNumber, email}: PacienteDetailsProps) {
   return (
     <div>
-      <h2>Informações do Paciente</h2>
       <Table>
         <thead>
           <th>Nome</th>
