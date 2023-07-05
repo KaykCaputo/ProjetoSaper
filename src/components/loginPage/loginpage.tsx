@@ -228,7 +228,7 @@ export default function LoginPage() {
                   id="register"
                   name="register"
                   value="REGISTER"
-                  onClick={() => _handleSubmit(_state)}
+                  onClick={() => _handleSubmit}
                 />
                 <div
                   className="form-border"
