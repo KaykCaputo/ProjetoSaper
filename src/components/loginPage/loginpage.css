@@ -1,5 +1,4 @@
 .loginbody {
-  text-align: center;
   display: block;
   align-self: center;
   align-items: center;
@@ -13,6 +12,8 @@
   height: 100%;
   overflow: hidden;
   position: absolute;
+  margin-left: -7.7px;
+  margin-top: -9px;
 }
 
 a {
@@ -161,4 +162,18 @@ label {
   align-items: center;
   text-align: center;
   display: none;
+}
+
+#card-content-back input {
+  width: 100%;
+}
+
+#card-content-back #username{
+padding: 2px 0 14px 1px;
+border-radius: 5px;
+}
+
+#card-content-front #user-password{
+  padding: 2px 0 14px 1px;
+  border-radius: 5px;
 }
