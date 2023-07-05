@@ -13,7 +13,7 @@ const LocaleConfig : Intl.DateTimeFormatOptions = {day: 'numeric', month: 'numer
 export default function InternationDetails({cause, date, bed, protocol,}: InternationDetailsProps) {
   return (
           <tr>
-            <td>{cause} anos</td>
+            <td>{cause}</td>
             <td>{date.toLocaleDateString(undefined, LocaleConfig)}</td>
             <td>{bed}</td>
             <td>{protocol}</td>

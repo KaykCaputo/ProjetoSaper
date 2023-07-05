@@ -40,7 +40,7 @@ export default function LoginPage() {
       api.get("/user", {}, htmlConfig).then((res) => {
         auth.updateUser ? auth.updateUser({ ...res, basicAuth }) : null;/* eslint-disable-line */
         
-        navigate("/home");
+        navigate("/");
       });
     }
   }
