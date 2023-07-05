@@ -58,8 +58,6 @@ export default function LoginPage() {
     password: '',
     email: '',
   })
-  const _auth = useContext(AuthContext)
-  const _api = useAPI()
   const imageInputRef = useRef<HTMLInputElement>(null)
   const [imageProfile, setImageProfile] = useState<any>('./userdefault.png')
 
@@ -87,8 +85,8 @@ export default function LoginPage() {
         },
       }
 
-      api.post('/students', _state, httpConfig).then(() => {
-        navigate('/user')
+      api.post('/user', _state, httpConfig).then(() => {
+        navigate('/')
       })
     }
   }
