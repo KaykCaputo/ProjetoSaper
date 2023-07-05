@@ -7,7 +7,7 @@ import { useAPI } from "../../services/API";
 import { AuthContext } from "../../store/authContext";
 import { useNavigate } from "react-router-dom";
 
-
+/** @tsx React.DOM */
 
 type LoginData = {
   email: string;

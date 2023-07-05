@@ -4,7 +4,7 @@ export function flip() {
   var backDisplayStyle = window
     .getComputedStyle(backContent)
     .getPropertyValue("display");
-  if (backDisplayStyle === "none") {
+  if (backDisplayStyle == "none") {
     backContent.style.display = "block";
     frontContent.style.display = "none";
   } else {
@@ -13,7 +13,7 @@ export function flip() {
   }
   var card = document.querySelector(".card");
   card.style.transform =
-    card.style.transform === "rotateY(360deg)"
+    card.style.transform == "rotateY(360deg)"
       ? "rotateY(0)"
       : "rotateY(360deg)";
   console.log("flip() called");

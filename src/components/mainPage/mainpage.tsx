@@ -1,7 +1,7 @@
 import React from "react";
 import Helmet from "react-helmet";
 import Sidebar from "./../sidebar/sidebar";
-
+/** @tsx React.DOM */
 export default function BedsPage() {
   return (
     <html style={{ overflow: "hidden" }}>
