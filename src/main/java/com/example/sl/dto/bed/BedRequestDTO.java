@@ -1,12 +1,13 @@
 package com.example.sl.dto.bed;
 
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 import jdk.jfr.BooleanFlag;
 
 public class BedRequestDTO {
     @BooleanFlag
-    @NotBlank
+    @NotNull
     public Boolean occupied;
 
     @Size(max = 30, message = "Insert the type of bed, max 30 characters")

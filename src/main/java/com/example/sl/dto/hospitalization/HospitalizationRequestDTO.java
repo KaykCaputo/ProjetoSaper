@@ -1,6 +1,7 @@
 package com.example.sl.dto.hospitalization;
 
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 import org.springframework.format.annotation.DateTimeFormat;
 
@@ -18,7 +19,7 @@ public class HospitalizationRequestDTO {
     public String origem;
 
     @DateTimeFormat(iso = DateTimeFormat.ISO.DATE, fallbackPatterns = { "M/d/yy", "dd.MM.yyyy" })
-    @NotBlank(message = "Hospitalization date can't be blank")
+    @NotNull
     public Date hospitalizationDate;
 
     @Size(min = 5, max = 60, message = "Insert the permanenceReason, min 5 and max 60")

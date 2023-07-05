@@ -4,6 +4,7 @@ import com.example.sl.models.Pacient;
 import com.example.sl.services.PacientService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import jakarta.validation.Valid;
 
 @RestController
 @RequestMapping("/pacient")
@@ -22,7 +23,7 @@ public class PacientController {
     }
 
     @PostMapping
-    public Pacient addPacient(@RequestBody PacientRequestDTO pacientRequestDTO) {
+    public Pacient addPacient(@Valid @RequestBody PacientRequestDTO pacientRequestDTO) {
         return pacientService.addPacient(pacientRequestDTO);
     }
 

@@ -2,6 +2,7 @@ package com.example.sl.controllers;
 import com.example.sl.dto.bed.BedRequestDTO;
 import com.example.sl.services.BedService;
 import com.example.sl.models.Bed;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -23,7 +24,7 @@ public class BedController{
     }
 
     @PostMapping
-    public Bed addBed(@RequestBody BedRequestDTO bedRequestDTO) {
+    public Bed addBed(@Valid @RequestBody BedRequestDTO bedRequestDTO) {
         return bedService.addBed(bedRequestDTO);
     }
 
