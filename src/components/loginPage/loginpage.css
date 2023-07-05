@@ -84,7 +84,11 @@ label {
   border-radius: 7px;
   border: 0.5px solid #2d2347;
   padding: 2px 2px;
-  width: 3vw;
+  align-self: center;
+  align-content: center;
+  align-items: center;
+  text-align: center;
+  width: 60px;
 }
 
 #submit {

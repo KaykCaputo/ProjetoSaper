@@ -162,7 +162,7 @@ export default function LoginPage() {
                 />
                 <div
                   className="form-border"
-                  style={{ marginBottom: "4%",paddingTop: "13px;" }}
+                  style={{ marginBottom: "4%"}}
                 ></div>
                 Have an account? 
                 <input
