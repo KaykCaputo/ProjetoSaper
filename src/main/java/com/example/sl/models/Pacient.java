@@ -17,7 +17,7 @@ public class Pacient {
     String phone;
 
     Boolean medicalRelease;
-    @OneToMany(mappedBy = "_pacient", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "pacient", cascade = CascadeType.ALL)
     private List<Hospitalization> hospitalizationList;
 
 

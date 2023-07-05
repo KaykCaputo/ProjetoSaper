@@ -14,11 +14,11 @@ public class Hospitalization {
     Long medicalRecord_id;
     @ManyToOne
     @JoinColumn(name = "medicalRecord_id", nullable = false, updatable = false, insertable = false)
-    private Pacient _pacient;
+    private Pacient pacient;
     Long bed_id;
     @ManyToOne
     @JoinColumn(name = "bed_id", nullable = false, updatable = false, insertable = false)
-    private Bed _bed;
+    private Bed bed;
     String fugilin;
     String origem;
     Date hospitalizationDate;
