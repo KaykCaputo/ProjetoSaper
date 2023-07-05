@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-expressions */
 import React, { useContext, useState } from "react";
 import Helmet from "react-helmet";
 import "./loginpage.css";
@@ -33,9 +34,9 @@ export default function LoginPage() {
           Authorization: basicAuth,
         },
       };
-
       api.get("/my/client", {}, htmlConfig).then((res) => {
-        auth.updateUser ? auth.updateUser({ ...res, basicAuth }) : null;
+        auth.updateUser ? auth.updateUser({ ...res, basicAuth }) : null;/* eslint-disable-line */
+        
         navigate("/home");
       });
     }

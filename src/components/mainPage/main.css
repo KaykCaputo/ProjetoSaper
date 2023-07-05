@@ -54,10 +54,10 @@ body {
   margin-left: 0; /* Removido o valor fixo */
   padding: 20px;
 }
-.card-with-sidebar {
+.row .card-with-sidebar {
   margin-left: 250px;
 }
-.card:hover {
+.row .card:hover {
   transform: translateY(-5px);
   cursor: pointer;
 }
