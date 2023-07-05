@@ -114,7 +114,7 @@ export default function LoginPage() {
               <h2>Welcome Back</h2>
               <div className="underline-title"></div>
             </div>
-            <form method="get" className="form">
+            <form className="form" onSubmit={handleSubmit}>
               <label htmlFor="user-email" style={{ paddingTop: "13px" }}>
                 {" "}
                 &nbsp;Email{" "}
@@ -155,7 +155,7 @@ export default function LoginPage() {
               <a>
                 <legend id="forgot-pass">Forgot password?</legend>
               </a>
-              <input id="submit" type="submit" name="submit" value="LOGIN" onClick={() => handleSubmit}/>{" "}
+              <input id="submit" type="submit" name="submit" value="LOGIN"/>{" "}
               <a id="signup" style={{ fontSize: "11pt;" }}>
                 Don't have an Account?
                 <input
@@ -174,7 +174,7 @@ export default function LoginPage() {
               <div className="underline-title"></div>
             </div>
             <div>
-              <form method="post" className="form">
+              <form className="form" onSubmit={_handleSubmit}>
                 <label htmlFor="username" style={{ paddingTop: "13px;" }}>
                   &nbsp;Username
                 </label>
@@ -228,7 +228,6 @@ export default function LoginPage() {
                   id="register"
                   name="register"
                   value="REGISTER"
-                  onClick={() => _handleSubmit}
                 />
                 <div
                   className="form-border"
