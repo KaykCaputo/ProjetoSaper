@@ -34,7 +34,7 @@ export default function LoginPage() {
           Authorization: basicAuth,
         },
       };
-      api.get("/my/client", {}, htmlConfig).then((res) => {
+      api.get("/user", {}, htmlConfig).then((res) => {
         auth.updateUser ? auth.updateUser({ ...res, basicAuth }) : null;/* eslint-disable-line */
         
         navigate("/home");
