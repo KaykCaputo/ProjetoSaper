@@ -233,11 +233,10 @@ export default function LoginPage() {
                   className="form-border"
                   style={{ marginBottom: "4%"}}
                 ></div>
-                Have an account? 
                 <input
                 style={{ marginBottom: "14%"}}
                   type="button"
-                  value="Login"
+                  value="Have an account? Go To Login"
                   className="btn2"
                   onClick={() => flip()}
                 />
