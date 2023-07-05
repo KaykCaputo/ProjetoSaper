@@ -7,12 +7,15 @@ import { useAPI } from "../../services/API";
 import { AuthContext } from "../../store/authContext";
 import { useNavigate } from "react-router-dom";
 
+
+
 type LoginData = {
   email: string;
   password: string;
 };
 
 export default function LoginPage() {
+  document.body.style.overflow = "hidden"
   const auth = useContext(AuthContext);
   const navigate = useNavigate();
   const [state, setState] = useState<LoginData>({ email: "", password: "" });
@@ -96,11 +99,11 @@ export default function LoginPage() {
                 />
               </div>
               <div className="form-border"></div>
-              <a href="#">
+              <a>
                 <legend id="forgot-pass">Forgot password?</legend>
               </a>
-              <input id="submit" type="submit" name="submit" value="LOGIN" />{" "}
-              <a href="#" id="signup" style={{ fontSize: "11pt;" }}>
+              <input id="submit" type="submit" name="submit" value="LOGIN" onClick={() => handleSubmit}/>{" "}
+              <a id="signup" style={{ fontSize: "11pt;" }}>
                 Don't have an Account?
                 <input
                   type="button"

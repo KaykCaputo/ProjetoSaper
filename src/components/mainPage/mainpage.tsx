@@ -68,7 +68,7 @@ export default function BedsPage() {
         <div className="content">
           <h4 style={{ textAlign: "center", marginTop: "1%" }}>
             Qualquer bug/duvida entre em contato com:
-            contatohospialbeds@email.com.br
+            contatohospitalbeds@email.com.br
           </h4>
         </div>
       </body>

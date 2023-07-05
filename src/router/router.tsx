@@ -8,7 +8,7 @@ import BedsPage from "../components/mainPage/bedsPage/bedspage";
 import InternationPage from "../components/mainPage/internationsPage/internationpage";
 import LoginPage from "../components/loginPage/loginpage";
 import NewPacientPage from "../components/mainPage/pacientesPage/cnewPacientPage";
-import { Link } from "react-router-dom";
+
 
 const RequireAuth = ({ children }: { children: any }) => {
   const auth = useContext(AuthContext);
@@ -22,7 +22,7 @@ const RequireAuth = ({ children }: { children: any }) => {
 const MyRoutes = () => {
   return (
       <Routes>
-        <Route path="/*" Component={Mainpage}></Route>
+        <Route path="/" Component={Mainpage}></Route>
         <Route path="/login" element={<LoginPage/>}></Route>
         <Route path="/pacients" Component={PacientsPage}></Route>
         <Route path={"/pacients"} Component={PacientsPage}>
