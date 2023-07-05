@@ -45,15 +45,6 @@ export default function LoginPage() {
     }
   }
   return (
-    <html className="loginhtml" style={{ overflow: "hidden" }}>
-      <Helmet>
-        <meta charSet="utf-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <title>Hospital Beds</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
-        <script src="script.js"></script>
-      </Helmet>
       <body className="loginbody">
         <div id="card-front" className="card">
           <div className="front" id="card-content-front">
@@ -171,11 +162,13 @@ export default function LoginPage() {
                 />
                 <div
                   className="form-border"
-                  style={{ marginBottom: "4%" }}
+                  style={{ marginBottom: "4%",paddingTop: "13px;" }}
                 ></div>
+                Have an account? 
                 <input
+                style={{ marginBottom: "14%"}}
                   type="button"
-                  value="Have an account? Go To Login"
+                  value="Login"
                   className="btn2"
                   onClick={() => flip()}
                 />
@@ -184,6 +177,5 @@ export default function LoginPage() {
           </div>
         </div>
       </body>
-    </html>
   );
 }

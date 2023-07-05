@@ -1,10 +1,10 @@
 .loginbody {
   text-align: center;
-  display: flex;
+  display: block;
   align-self: center;
   align-items: center;
   align-content: center;
-  margin: 0px, 0px, 0px, 0px;
+  margin: 0%;
   background-image: url(https://cdn.discordapp.com/attachments/1095476831978786916/1123023077614297228/imagem_2023-06-26_195051146-transformed.jpeg);
   background-size: cover;
   background-position: center;
@@ -15,9 +15,6 @@
   position: absolute;
 }
 
-.loginhtml {
-  overflow: hidden;
-}
 a {
   text-decoration: none;
 }
@@ -86,11 +83,8 @@ label {
   color: white;
   border-radius: 7px;
   border: 0.5px solid #2d2347;
-  margin-top: 10px;
-  width: 20%;
-  display: flex;
-  align-self: center;
-  justify-content: center;
+  padding: 2px 2px;
+  width: 3vw;
 }
 
 #submit {
@@ -163,7 +157,4 @@ label {
   align-items: center;
   text-align: center;
   display: none;
-}
-#card-content-back input {
-  width: 100%;
 }
