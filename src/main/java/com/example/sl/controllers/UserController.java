@@ -1,6 +1,6 @@
 package com.example.sl.controllers;
 
-import com.example.sl.dto.User.UserRequestDTO;
+import com.example.sl.dto.user.UserRequestDTO;
 import com.example.sl.services.UserService;
 import org.apache.catalina.User;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -1,7 +1,7 @@
 package com.example.sl.services;
 
-import com.example.sl.dto.User.UserRequestDTO;
-import com.example.sl.dto.User.UserResponseDTO;
+import com.example.sl.dto.user.UserRequestDTO;
+import com.example.sl.dto.user.UserResponseDTO;
 import com.example.sl.models.User;
 import com.example.sl.repository.UserRepository;
 import jakarta.transaction.Transactional;

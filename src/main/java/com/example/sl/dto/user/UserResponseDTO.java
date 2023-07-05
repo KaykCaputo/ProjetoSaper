@@ -1,4 +1,4 @@
-package com.example.sl.dto.User;
+package com.example.sl.dto.user;
 import com.example.sl.models.User;
 public class UserResponseDTO {
     Long user_id;

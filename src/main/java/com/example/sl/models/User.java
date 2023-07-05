@@ -1,6 +1,6 @@
 package com.example.sl.models;
 
-import com.example.sl.dto.User.UserRequestDTO;
+import com.example.sl.dto.user.UserRequestDTO;
 import jakarta.persistence.*;
 
 @Entity
@@ -14,17 +14,19 @@ public class User {
     @Column(unique = true)
     String email;
 
+    public User() {
+    }
+
     public User(Long user_id, String username, String password, String email) {
         this.user_id = user_id;
         this.username = username;
         this.password = password;
         this.email = email;
     }
-
-    public User() {
-    }
-
     public User(UserRequestDTO userRequestDTO) {
+        this.email = userRequestDTO.email;
+        this.username = userRequestDTO.username;
+        this.password = userRequestDTO.password;
 
     }
 
