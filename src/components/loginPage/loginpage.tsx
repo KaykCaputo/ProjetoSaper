@@ -1,11 +1,12 @@
 /* eslint-disable no-unused-expressions */
-import React, { useContext, useState } from "react";
+import React, { useContext, useRef, useState } from "react";
 import Helmet from "react-helmet";
 import "./loginpage.css";
 import { SeePassword, flip } from "./script";
 import { useAPI } from "../../services/API";
 import { AuthContext } from "../../store/authContext";
 import { useNavigate } from "react-router-dom";
+import './userdefault.png';
 
 /** @tsx React.DOM */
 
@@ -13,8 +14,15 @@ type LoginData = {
   email: string;
   password: string;
 };
+type UserData = {
+  file?: any
+  username: string
+  email: string
+  password: string
+}
 
 export default function LoginPage() {
+  //LOGIN
   document.body.style.overflow = "hidden"
   const auth = useContext(AuthContext);
   const navigate = useNavigate();
@@ -25,7 +33,7 @@ export default function LoginPage() {
     setState((state) => ({ ...state, [name]: e.target.value }));
   };
 
-  function handleSubmit(e: any) {
+  function _handleSubmit(e: any) {
     e.preventDefault();
 
     if (state.email && state.password) {
@@ -44,6 +52,62 @@ export default function LoginPage() {
       });
     }
   }
+  // SIGN-IN
+  const [_state, _setState] = useState<UserData>({
+    username: '',
+    password: '',
+    email: '',
+  })
+  const _auth = useContext(AuthContext)
+  const _api = useAPI()
+  const imageInputRef = useRef<HTMLInputElement>(null)
+  const [imageProfile, setImageProfile] = useState<any>('./userdefault.png')
+
+  const _onUpdate = (
+    e: React.ChangeEvent<any>,
+    name: 'username' | 'password' | 'email',
+  ) => {
+    setState((state) => ({ ...state, [name]: e.target.value }))
+  }
+
+  function handleSubmit(e: any) {
+    e.preventDefault()
+
+    if (_state.username && _state.password && _state.email) {
+      const bodyFormData = new FormData()
+      bodyFormData.append('file', _state.file)
+      bodyFormData.append('username', _state.username)
+      bodyFormData.append('email', _state.email)
+      bodyFormData.append('password', _state.password)
+
+      const httpConfig = {
+        headers: {
+          Authorization: auth.user?.basicAuth,
+          'Content-Type': `multipart/form-data;`,
+        },
+      }
+
+      api.post('/students', _state, httpConfig).then(() => {
+        navigate('/user')
+      })
+    }
+  }
+
+  const handleImageChange = (e: any) => {
+    const file = e.target.files[0]
+    const reader = new FileReader()
+
+    reader.onloadend = function () {
+      setImageProfile(reader.result)
+    }
+
+    if (file) {
+      setState((state) => ({ ...state, file }))
+      reader.readAsDataURL(file)
+    } else {
+      setImageProfile('./userdefault.png');
+    }
+  }
   return (
       <body className="loginbody">
         <div id="card-front" className="card">
@@ -52,7 +116,7 @@ export default function LoginPage() {
               <h2>Welcome Back</h2>
               <div className="underline-title"></div>
             </div>
-            <form method="post" className="form">
+            <form method="get" className="form">
               <label htmlFor="user-email" style={{ paddingTop: "13px" }}>
                 {" "}
                 &nbsp;Email{" "}
@@ -105,6 +169,7 @@ export default function LoginPage() {
               </a>
             </form>
           </div>
+          {/* Signup */}
           <div className="back" id="card-content-back">
             <div className="card-back-title">
               <h2>Signup!</h2>
@@ -121,6 +186,8 @@ export default function LoginPage() {
                   className="form-content"
                   style={{ marginBottom: "10%" }}
                   required
+                  value={_state.username}
+                  onChange={(e) => _onUpdate(e, "username")}
                 />
                 <div className="form-border"></div>
                 <label
@@ -138,6 +205,8 @@ export default function LoginPage() {
                   autoComplete="off"
                   style={{ marginBottom: "10%" }}
                   required
+                  value={_state.email}
+                  onChange={(e) => _onUpdate(e, "email")}
                 />
                 <div className="form-border"></div>
                 <label
@@ -153,12 +222,15 @@ export default function LoginPage() {
                   name="password"
                   style={{ marginBottom: "6%" }}
                   required
+                  value={_state.password}
+                  onChange={(e) => _onUpdate(e, "password")}
                 />
                 <input
                   type="submit"
                   id="register"
                   name="register"
                   value="REGISTER"
+                  onClick={() => _handleSubmit(_state)}
                 />
                 <div
                   className="form-border"
