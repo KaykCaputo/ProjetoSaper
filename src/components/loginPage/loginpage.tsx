@@ -65,7 +65,7 @@ export default function LoginPage() {
     e: React.ChangeEvent<any>,
     name: 'username' | 'password' | 'email',
   ) => {
-    setState((state) => ({ ...state, [name]: e.target.value }))
+    setState((_state) => ({ ..._state, [name]: e.target.value }))
   }
 
   function handleSubmit(e: any) {
