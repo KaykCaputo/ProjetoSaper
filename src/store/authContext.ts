@@ -2,8 +2,8 @@ import { createContext } from "react";
 
 export type User = {
   name: string;
-  login: string;
-  student_id: number;
+  username: string;
+  user_id: number;
   basicAuth: string;
   profileImage: {
     id: number;

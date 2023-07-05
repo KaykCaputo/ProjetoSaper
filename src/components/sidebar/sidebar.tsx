@@ -1,11 +1,13 @@
-import React from "react";
+import React, { useContext } from "react";
 import Helmet from "react-helmet";
 import { toggleNav } from "./script";
 import "./sidebar.css";
 import { Link } from "react-router-dom";
 import Dropdown from "react-bootstrap/Dropdown";
+import { AuthContext } from "../../store/authContext";
 
 export default function Sidebar() {
+  const auth = useContext(AuthContext);
   return (
     <html>
       <Helmet>
@@ -52,7 +54,7 @@ export default function Sidebar() {
               </div>
               <div className="bemvindo">
                 <div>Seja bem-vindo</div>
-                <div className="nomeblack">nome do back</div>
+                <div className="nomeblack">{auth.user?.username}</div>
               </div>
             </div>
           </div>
