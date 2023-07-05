@@ -2,6 +2,7 @@ import React from "react";
 import Helmet from "react-helmet";
 import Sidebar from "../../sidebar/sidebar";
 import BedDetails from "./components/bedDetails";
+import Table from "react-bootstrap/Table";
 import "../main.css";
 
 export default function BedsPage() {

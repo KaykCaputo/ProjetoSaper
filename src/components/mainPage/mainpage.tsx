@@ -37,7 +37,7 @@ export default function BedsPage() {
             <div className="row">
               <div className="card green">
                 <h2>Gerenciar Leitos</h2>
-                <ul style={{ lineHeight: "350%", fontSize: "1.3vw" }}>
+                <ul style={{ lineHeight: "350%", fontSize: "21px" }}>
                   <li>Cadastrar Leitos</li>
                   <li>Apagar Leitos</li>
                   <li>Gerenciar Ocupação dos Leitos</li>
@@ -46,7 +46,7 @@ export default function BedsPage() {
 
               <div className="card blue">
                 <h2>Gerenciar Pacientes</h2>
-                <ul style={{ lineHeight: "350%", fontSize: "1.3vw" }}>
+                <ul style={{ lineHeight: "350%", fontSize: "21px" }}>
                   <li>Cadastrar Pacientes</li>
                   <li>Apagar Pacientes</li>
                   <li>Gerenciar o Prontuario</li>
@@ -55,7 +55,7 @@ export default function BedsPage() {
 
               <div className="card red">
                 <h2>Gerenciar Internações</h2>
-                <ul style={{ lineHeight: "350%", fontSize: "1.3vw" }}>
+                <ul style={{ lineHeight: "350%", fontSize: "21px" }}>
                   <li>Cadastrar Internações</li>
                   <li>Apagar Internações</li>
                   <li>Atualizar Internações</li>

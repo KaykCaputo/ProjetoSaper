@@ -157,8 +157,9 @@ th {
 #search-btn {
   margin-right: 84%;
   margin-top: 0.3%;
-  background-color: #a1c8ff;
-  border-radius: 10px;
+  background-color: #007bff;
+  color: aliceblue;
+  border-radius: 4px;
   height: 4vh;
   border-style: hidden;
 }

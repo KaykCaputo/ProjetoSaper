@@ -33,7 +33,7 @@ export default function BedDetails({
           style={{
             float: "right",
             height: "6vh",
-            fontSize: "0.9vw",
+            fontSize: "16px",
             marginBottom: "2%",
           }}
         >
@@ -45,7 +45,7 @@ export default function BedDetails({
           style={{
             float: "right",
             height: "6vh",
-            fontSize: "0.9vw",
+            fontSize: "16px",
             marginBottom: "2%",
             marginRight: "1%",
           }}
