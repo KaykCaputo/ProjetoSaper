@@ -47,6 +47,7 @@ export default function LoginPage() {
       api
         .get("/user/username/" + state.username, {}, htmlConfig)
         .then((res) => {
+           /* eslint-disable */
           auth.updateUser ? auth.updateUser({ ...res, basicAuth }) : null;
 
           navigate("/");
