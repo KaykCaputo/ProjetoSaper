@@ -1,11 +1,17 @@
-import React from "react";
+
 import Helmet from "react-helmet";
 import Sidebar from "../../sidebar/sidebar";
 import BedDetails from "./components/bedDetails";
 import Table from "react-bootstrap/Table";
 import "../main.css";
+import React, { useEffect, useState } from 'react'
+import { MapContainer, Marker, Popup, TileLayer } from 'react-leaflet'
+import L from 'leaflet';
+import { useAPI } from '../../../services/API'
+import {Link, useNavigate} from 'react-router-dom'
 
 export default function BedsPage() {
+
   return (
     <html>
       <Helmet>

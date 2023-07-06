@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { AuthContext, User } from "./store/authContext";
 import MyRoutes from "./router/router";
 
+
 function App() {
   const [user, setUser] = useState<User>();
 
