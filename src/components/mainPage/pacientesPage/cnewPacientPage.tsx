@@ -36,8 +36,8 @@ export default function NewPacientPage(){
                     <textarea id="motivo" name="motivo" required></textarea>
                 </div>
                 <div className="form-group">
-                    <label htmlFor="data">Telefone:</label>
-                    <input type="date" id="data" name="data" required/>
+                    <label htmlFor="tel">Telefone:</label>
+                    <input type="tel" id="tel" name="tel" required/>
                 </div>
                 <div  className="form-group">
                     <label htmlFor="Gender">Sexo:</label>
