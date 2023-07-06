@@ -4,18 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0d643004-0749-405a-947a-c5a6ca017abc" name="Changes" comment="">
+    <list default="true" id="0d643004-0749-405a-947a-c5a6ca017abc" name="Changes" comment="Login working">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/sl/SistemaDeLeitosApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/sl/SistemaDeLeitosApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/sl/config/security/SecurityConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/sl/config/security/SecurityConfiguration.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/sl/controllers/BedController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/sl/controllers/BedController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/sl/controllers/HospitalizationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/sl/controllers/HospitalizationController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/sl/controllers/PacientController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/sl/controllers/PacientController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/sl/controllers/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/sl/controllers/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/sl/dto/user/UserResponseDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/sl/dto/user/UserResponseDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/sl/services/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/sl/services/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -121,6 +111,15 @@
       <updated>1688582121399</updated>
       <workItem from="1688582126170" duration="1054000" />
     </task>
+    <task id="LOCAL-00001" summary="Login working">
+      <option name="closed" value="true" />
+      <created>1688666012669</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1688666012669</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -136,5 +135,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Login working" />
+    <option name="LAST_COMMIT_MESSAGE" value="Login working" />
   </component>
 </project>
