@@ -9,7 +9,6 @@ import InternationPage from "../components/mainPage/internationsPage/internation
 import LoginPage from "../components/loginPage/loginpage";
 import NewPacientPage from "../components/mainPage/pacientesPage/cnewPacientPage";
 
-
 const RequireAuth = ({ children }: { children: any }) => {
   const auth = useContext(AuthContext);
 
@@ -21,18 +20,18 @@ const RequireAuth = ({ children }: { children: any }) => {
 };
 const MyRoutes = () => {
   return (
-      <Routes>
-        <Route path="/" Component={Mainpage}></Route>
-        <Route path="/login" element={<LoginPage/>}></Route>
-        <Route path="/pacients" Component={PacientsPage}></Route>
-        <Route path={"/pacients"} Component={PacientsPage}>
-          <Route path={""} Component={PacientsPage} />
-          <Route path={"new"} Component={NewPacientPage} />
-        </Route>
-        <Route path="/pacients/newPaciente" Component={NewPacientPage}></Route>
-        <Route path="/beds" Component={BedsPage}></Route>
-        <Route path="/pacients/internation" Component={InternationPage}></Route>
-      </Routes>
+    <Routes>
+      <Route path="/" Component={Mainpage}></Route>
+      <Route path="/login" element={<LoginPage />}></Route>
+      <Route path="/pacients" Component={PacientsPage}></Route>
+      <Route path={"/pacients"} Component={PacientsPage}>
+        <Route path={""} Component={PacientsPage} />
+        <Route path={"new"} Component={NewPacientPage} />
+      </Route>
+      <Route path="/pacients/newPaciente" Component={NewPacientPage}></Route>
+      <Route path="/beds" Component={BedsPage}></Route>
+      <Route path="/pacients/internation" Component={InternationPage}></Route>
+    </Routes>
   );
 };
 

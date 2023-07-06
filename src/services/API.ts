@@ -6,8 +6,8 @@ import { AuthContext } from "../store/authContext";
 
 export const useAPI = () => {
   const auth = useContext(AuthContext);
-  const BACK_HOST: string | undefined = 'http://localhost:8080';
-  Axios.defaults.headers.post['Access-Control-Allow-Origin'] = '*';
+  const BACK_HOST: string | undefined = "http://localhost:8080";
+  Axios.defaults.headers.post["Access-Control-Allow-Origin"] = "*";
 
   const defaultHttpConfig = useMemo((): any => {
     return {

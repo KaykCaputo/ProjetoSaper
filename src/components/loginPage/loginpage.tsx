@@ -6,7 +6,7 @@ import { SeePassword, flip } from "./script";
 import { useAPI } from "../../services/API";
 import { AuthContext } from "../../store/authContext";
 import { useNavigate } from "react-router-dom";
-import './userdefault.png';
+import "./userdefault.png";
 
 /** @tsx React.DOM */
 
@@ -15,20 +15,23 @@ type LoginData = {
   password: string;
 };
 type UserData = {
-  username: string
-  email: string
-  password: string
-}
+  username: string;
+  email: string;
+  password: string;
+};
 
 export default function LoginPage() {
   //LOGIN
-  document.body.style.overflow = "hidden"
+  document.body.style.overflow = "hidden";
   const auth = useContext(AuthContext);
   const navigate = useNavigate();
   const [state, setState] = useState<LoginData>({ username: "", password: "" });
   const api = useAPI();
 
-  const onUpdate = (e: React.ChangeEvent<any>, name: "username" | "password") => {
+  const onUpdate = (
+    e: React.ChangeEvent<any>,
+    name: "username" | "password"
+  ) => {
     setState((state) => ({ ...state, [name]: e.target.value }));
   };
 
@@ -43,13 +46,17 @@ export default function LoginPage() {
           Authorization: basicAuth,
         },
       };
-      api.get("/user/username/"+state.username, {}, htmlConfig).then((res) => {
-         /* eslint-disable */auth.updateUser ? auth.updateUser({ ...res, basicAuth }) : null;
-        
-        navigate("/");
-      });
+      api
+        .get("/user/username/" + state.username, {}, htmlConfig)
+        .then((res) => {
+          /* eslint-disable */ auth.updateUser
+            ? auth.updateUser({ ...res, basicAuth })
+            : null;
+
+          navigate("/");
+        });
     }
-  }  
+  }
   // SIGN-IN
   // const [_state, _setState] = useState<UserData>({
   //   username: '',
@@ -87,65 +94,71 @@ export default function LoginPage() {
   // }
 
   return (
-      <body className="loginbody">
-        <div id="card-front" className="card">
-          <div className="front" id="card-content-front">
-            <div id="card-title-front">
-              <h2>Welcome Back</h2>
-              <div className="underline-title"></div>
+    <body className="loginbody">
+      <div id="card-front" className="card">
+        <div className="front" id="card-content-front">
+          <div id="card-title-front">
+            <h2>Welcome Back</h2>
+            <div className="underline-title"></div>
+          </div>
+          <form className="form">
+            <label htmlFor="username" style={{ paddingTop: "13px" }}>
+              {" "}
+              &nbsp;Email{" "}
+            </label>
+            <input
+              id="username"
+              className="form-content"
+              type="username"
+              name="username"
+              autoComplete="on"
+              required
+              value={state.username}
+              onChange={(e) => onUpdate(e, "username")}
+            />
+            <div className="form-border"></div>
+            <label htmlFor="user-password" style={{ paddingTop: "22px" }}>
+              &nbsp;Password{" "}
+            </label>
+            <input
+              id="user-password"
+              className="form-content"
+              type="password"
+              name="password"
+              required
+              value={state.password}
+              onChange={(e) => onUpdate(e, "password")}
+            />
+            <div>
+              Show Password
+              <input
+                name="seepass"
+                type="checkbox"
+                onClick={() => SeePassword()}
+                id="see-password"
+              />
             </div>
-            <form className="form">
-              <label htmlFor="username" style={{ paddingTop: "13px" }}>
-                {" "}
-                &nbsp;Email{" "}
-              </label>
+            <div className="form-border"></div>
+            <a>
+              <legend id="forgot-pass">Forgot password?</legend>
+            </a>
+            <input
+              id="submit"
+              type="button"
+              name="submit"
+              value="LOGIN"
+              onClick={() => doLogin()}
+            />{" "}
+            <a id="signup" style={{ fontSize: "11pt;" }}>
+              Don't have an Account?
               <input
-                id="username"
-                className="form-content"
-                type="username"
-                name="username"
-                autoComplete="on"
-                required
-                value={state.username}
-                onChange={(e) => onUpdate(e, "username")}
+                type="button"
+                value="Sign Up"
+                className="btn1"
+                onClick={() => flip()}
               />
-              <div className="form-border"></div>
-              <label htmlFor="user-password" style={{ paddingTop: "22px" }}>
-                &nbsp;Password{" "}
-              </label>
-              <input
-                id="user-password"
-                className="form-content"
-                type="password"
-                name="password"
-                required
-                value={state.password}
-                onChange={(e) => onUpdate(e, "password")}
-              />
-              <div>
-                Show Password
-                <input
-                  name="seepass"
-                  type="checkbox"
-                  onClick={() => SeePassword()}
-                  id="see-password"
-                />
-              </div>
-              <div className="form-border"></div>
-              <a>
-                <legend id="forgot-pass">Forgot password?</legend>
-              </a>
-              <input id="submit" type="button" name="submit" value="LOGIN" onClick={() => doLogin()}/>{" "}
-              <a id="signup" style={{ fontSize: "11pt;" }}>
-                Don't have an Account?
-                <input
-                  type="button"
-                  value="Sign Up"
-                  className="btn1"
-                  onClick={() => flip()}
-                />
-              </a>
-            </form>
+            </a>
+          </form>
           {/* </div>
            Signup 
           <div className="back" id="card-content-back">
@@ -222,8 +235,8 @@ export default function LoginPage() {
                 />
               </form>
             </div> */}
-          </div>
         </div>
-      </body>
+      </div>
+    </body>
   );
 }

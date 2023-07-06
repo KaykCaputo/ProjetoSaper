@@ -3,17 +3,23 @@ import Helmet from "react-helmet";
 import { Link } from "react-router-dom";
 import { Table } from "react-bootstrap";
 
-interface PacienteDetailsProps{
-    name: string;
-    age: number;
-    gender: string;
-    address: string;
-    phoneNumber: string;
-    email: string;
+interface PacienteDetailsProps {
+  name: string;
+  age: number;
+  gender: string;
+  address: string;
+  phoneNumber: string;
+  email: string;
 }
 
-
-export default function PacientDetails({ name, age, gender, address, phoneNumber, email}: PacienteDetailsProps) {
+export default function PacientDetails({
+  name,
+  age,
+  gender,
+  address,
+  phoneNumber,
+  email,
+}: PacienteDetailsProps) {
   return (
     <div>
       <Table>

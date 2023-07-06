@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { AuthContext, User } from "./store/authContext";
 import MyRoutes from "./router/router";
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 
 function App() {

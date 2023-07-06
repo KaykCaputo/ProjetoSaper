@@ -1,20 +1,19 @@
 .loginbody {
-    display: block;
-    align-self: center;
-    align-items: center;
-    align-content: center;
-    margin: 0%;
-    background-image: url(https://cdn.discordapp.com/attachments/1095476831978786916/1123023077614297228/imagem_2023-06-26_195051146-transformed.jpeg);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    position: absolute;
-    margin-left: -7.7px;
-    margin-top: -9px;
-
+  display: block;
+  align-self: center;
+  align-items: center;
+  align-content: center;
+  margin: 0%;
+  background-image: url(https://cdn.discordapp.com/attachments/1095476831978786916/1123023077614297228/imagem_2023-06-26_195051146-transformed.jpeg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: absolute;
+  margin-left: -7.7px;
+  margin-top: -9px;
 }
 
 a {
@@ -164,16 +163,16 @@ label {
   display: none;
 }
 
-  #card-content-back input {
-    width: 100%;
-  }
+#card-content-back input {
+  width: 100%;
+}
 
-  #card-content-back #username{
+#card-content-back #username {
   padding: 2px 0 14px 1px;
   border-radius: 5px;
-  }
+}
 
-  #card-content-front #user-password{
-    padding: 2px 0 14px 1px;
-    border-radius: 5px;
-  }
+#card-content-front #user-password {
+  padding: 2px 0 14px 1px;
+  border-radius: 5px;
+}
