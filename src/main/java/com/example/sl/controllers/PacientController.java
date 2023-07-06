@@ -8,6 +8,7 @@ import jakarta.validation.Valid;
 
 @RestController
 @RequestMapping("/pacient")
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 public class PacientController {
     @Autowired
     PacientService pacientService;

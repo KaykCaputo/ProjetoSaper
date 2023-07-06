@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/bed")
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 public class BedController{
     @Autowired
     BedService bedService;

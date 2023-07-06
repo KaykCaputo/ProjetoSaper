@@ -10,6 +10,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -17,11 +18,11 @@ public class UserService {
     @Autowired
     UsersRepository usersRepository;
 
-    public Object getAllByName(String name){
+    public List<UserResponseDTO> getAllByName(String name){
         if(name.equals("")) {
-            return usersRepository.findAll().stream().map((UserResponseDTO::new));
+            return usersRepository.findAll().stream().map((UserResponseDTO::new)).toList();
         }else{
-            return usersRepository.findAllByUsernameContaining(name).stream().map((UserResponseDTO::new));
+            return usersRepository.findAllByUsernameContaining(name).stream().map((UserResponseDTO::new)).toList();
         }
     }
 
