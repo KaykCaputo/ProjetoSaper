@@ -1,14 +1,19 @@
 package com.example.sl.services;
 
+import com.example.sl.config.security.SecurityConfiguration;
 import com.example.sl.dto.user.UserRequestDTO;
 import com.example.sl.dto.user.UserResponseDTO;
 import com.example.sl.models.Users;
 import com.example.sl.repository.UsersRepository;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+import com.example.sl.config.security.SecurityConfiguration;
 
 import java.util.List;
 import java.util.Optional;
@@ -29,9 +34,14 @@ public class UserService {
     @Transactional
     public Object save(UserRequestDTO userRequestDTO){
         Users user = new Users(userRequestDTO);
-
+        user.setPassword(passwordEncoder().encode(userRequestDTO.password));
         usersRepository.save(user);
         return user;
+    }
+
+    @Bean
+    public PasswordEncoder passwordEncoder(){
+        return new BCryptPasswordEncoder();
     }
 
     public ResponseEntity<Object> findById(Long id) {
