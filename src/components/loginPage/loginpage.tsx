@@ -13,27 +13,25 @@ import "./userdefault.png";
 type LoginData = {
   username: string;
   password: string;
-};
-type UserData = {
-  username: string;
   email: string;
-  password: string;
 };
+
 
 export default function LoginPage() {
   //LOGIN
   document.body.style.overflow = "hidden";
   const auth = useContext(AuthContext);
   const navigate = useNavigate();
-  const [state, setState] = useState<LoginData>({ username: "", password: "" });
+  const [state, setState] = useState<LoginData>({ username: "", password: "" , email:""});
   const api = useAPI();
 
   const onUpdate = (
-    e: React.ChangeEvent<any>,
-    name: "username" | "password"
-  ) => {
-    setState((state) => ({ ...state, [name]: e.target.value }));
-  };
+    e: React.ChangeEvent<HTMLInputElement>,
+  name: "username" | "password" | "email"
+) => {
+  const value = e.target.value;
+  setState((prevState) => ({ ...prevState, [name]: value }));
+};
 
   function doLogin() {
     if (state.username && state.password) {
@@ -49,49 +47,38 @@ export default function LoginPage() {
       api
         .get("/user/username/" + state.username, {}, htmlConfig)
         .then((res) => {
-          /* eslint-disable */ auth.updateUser
-            ? auth.updateUser({ ...res, basicAuth })
-            : null;
+          auth.updateUser ? auth.updateUser({ ...res, basicAuth }) : null;
 
           navigate("/");
         });
     }
   }
   // SIGN-IN
-  // const [_state, _setState] = useState<UserData>({
-  //   username: '',
-  //   password: '',
-  //   email: '',
-  // })
+  
+  async function handleSubmit(e: any) {
+    e.preventDefault();
 
-  // const _onUpdate = (
-  //   _e: React.ChangeEvent<any>,
-  //   name: 'username' | 'password' | 'email',
-  // ) => {
-  //   setState((_state) => ({ ..._state, [name]: _e.target.value }))
-  // }
+   if (state.username && state.password && state.email) {
+      const userData = {
+        username: state.username,
+        email: state.email,
+        password: state.password,
+      };
 
-  // function handleSubmit(_e: any) {
-  //   _e.preventDefault()
-
-  //   if (_state.username && _state.password && _state.email) {
-  //     const bodyFormData = new FormData()
-  //     bodyFormData.append('username', _state.username)
-  //     bodyFormData.append('email', _state.email)
-  //     bodyFormData.append('password', _state.password)
-
-  //     const httpConfig = {
-  //       headers: {
-  //         Authorization: auth.user?.basicAuth,
-  //         'Content-Type': `multipart/form-data;`,
-  //       },
-  //     }
-
-  //     api.post('/user', _state, httpConfig).then(() => {
-  //       navigate('/')
-  //     })
-  //   }
-  // }
+      try {
+        const response = await api.post("/user", userData);
+        const { data } = response;
+        const basicAuth = response.headers["authorization"];
+        auth.updateUser && auth.updateUser({ ...data, basicAuth });
+        navigate("/");
+      } catch (error) {
+        // Handle error
+        console.error(error);
+      }
+    }
+    }
+  
+  
 
   return (
     <body className="loginbody">
@@ -104,7 +91,7 @@ export default function LoginPage() {
           <form className="form">
             <label htmlFor="username" style={{ paddingTop: "13px" }}>
               {" "}
-              &nbsp;Email{" "}
+              &nbsp;Username{" "}
             </label>
             <input
               id="username"
@@ -159,84 +146,81 @@ export default function LoginPage() {
               />
             </a>
           </form>
-          {/* </div>
-           Signup 
-          <div className="back" id="card-content-back">
-            <div className="card-back-title">
-              <h2>Signup!</h2>
-              <div className="underline-title"></div>
-            </div>
-            <div>
-              <form className="form" onSubmit={_handleSubmit}>
-                <label htmlFor="username" style={{ paddingTop: "13px;" }}>
-                  &nbsp;Username
-                </label>
-                <input
-                  type="text"
-                  id="username"
-                  className="form-content"
-                  style={{ marginBottom: "10%" }}
-                  required
-                  value={_state.username}
-                  onChange={(_e) => _onUpdate(_e, "username")}
-                />
-                <div className="form-border"></div>
-                <label
-                  htmlFor="user-registration"
-                  style={{ paddingTop: "13px;" }}
-                >
-                  {" "}
-                  &nbsp;Email
-                </label>
-                <input
-                  id="email-register"
-                  className="form-content"
-                  type="email"
-                  name="email"
-                  autoComplete="off"
-                  style={{ marginBottom: "10%" }}
-                  required
-                  value={_state.email}
-                  onChange={(_e) => _onUpdate(_e, "email")}
-                />
-                <div className="form-border"></div>
-                <label
-                  htmlFor="register-password"
-                  style={{ paddingTop: "22px;" }}
-                >
-                  &nbsp;Password
-                </label>
-                <input
-                  type="password"
-                  id="password-register"
-                  className="form-content"
-                  name="password"
-                  style={{ marginBottom: "6%" }}
-                  required
-                  value={_state.password}
-                  onChange={(_e) => _onUpdate(_e, "password")}
-                />
-                <input
-                  type="submit"
-                  id="register"
-                  name="register"
-                  value="REGISTER"
-                />
-                <div
-                  className="form-border"
-                  style={{ marginBottom: "4%"}}
-                ></div>
-                <input
-                style={{ marginBottom: "14%"}}
-                  type="button"
-                  value="Have an account? Go To Login"
-                  className="btn2"
-                  onClick={() => flip()}
-                />
-              </form>
-            </div> */}
+        </div>
+        <div className="back" id="card-content-back">
+          <div className="card-back-title">
+            <h2>Signup!</h2>
+            <div className="underline-title"></div>
+          </div>
+          <div>
+            <form className="form" onSubmit={handleSubmit}>
+              <label htmlFor="username" style={{ paddingTop: "13px;" }}>
+                &nbsp;Username
+              </label>
+              <input
+                type="text"
+                id="username"
+                className="form-content"
+                style={{ marginBottom: "10%" }}
+                required
+                value={state.username}
+                onChange={(e) => onUpdate(e, "username")}
+              />
+              <div className="form-border"></div>
+              <label
+                htmlFor="user-registration"
+                style={{ paddingTop: "13px;" }}
+              >
+                {" "}
+                &nbsp;Email
+              </label>
+              <input
+                id="email-register"
+                className="form-content"
+                type="email"
+                name="email"
+                autoComplete="off"
+                style={{ marginBottom: "10%" }}
+                required
+                value={state.email}
+                onChange={(e) => onUpdate(e, "email")}
+              />
+              <div className="form-border"></div>
+              <label
+                htmlFor="register-password"
+                style={{ paddingTop: "22px;" }}
+              >
+                &nbsp;Password
+              </label>
+              <input
+                type="password"
+                id="password-register"
+                className="form-content"
+                name="password"
+                style={{ marginBottom: "6%" }}
+                required
+                value={state.password}
+                onChange={(e) => onUpdate(e, "password")}
+              />
+              <input
+                type="submit"
+                id="register"
+                name="register"
+                value="REGISTER"
+              />
+              <div className="form-border" style={{ marginBottom: "4%" }}></div>
+              <input
+                style={{ marginBottom: "14%" }}
+                type="button"
+                value="Have an account? Go To Login"
+                className="btn2"
+                onClick={() => flip()}
+              />
+            </form>
+          </div>
         </div>
       </div>
     </body>
   );
 }
+
