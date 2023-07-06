@@ -13,26 +13,33 @@ const RequireAuth = ({ children }: { children: any }) => {
   const auth = useContext(AuthContext);
 
   if (!auth.user) {
-    return <Navigate to="/login" />;
+    return <Navigate to='/login' />;
   }
 
-  return children;
+  return <React.Fragment>{children}</React.Fragment>;
 };
+
 const MyRoutes = () => {
+  const auth = useContext(AuthContext);
   return (
     <Routes>
-      <Route path="/" Component={Mainpage}></Route>
-      <Route path="/login" element={<LoginPage />}></Route>
-      <Route path="/pacients" Component={PacientsPage}></Route>
-      <Route path={"/pacients"} Component={PacientsPage}>
-        <Route path={""} Component={PacientsPage} />
-        <Route path={"new"} Component={NewPacientPage} />
-      </Route>
-      <Route path="/pacients/newPaciente" Component={NewPacientPage}></Route>
-      <Route path="/beds" Component={BedsPage}></Route>
-      <Route path="/pacients/internation" Component={InternationPage}></Route>
+      <Route
+        path='/*'
+        element={
+          <RequireAuth>
+            <Routes>
+              <Route path='/login' element={<LoginPage />} />
+              <Route path='/' element={<Mainpage />} />
+              <Route path='/pacients' element={<PacientsPage />} />
+              <Route path='/pacients/new' element={<NewPacientPage />} />
+              <Route path='/beds' element={<BedsPage />} />
+              <Route path='/pacients/internation' element={<InternationPage />} />
+            </Routes>
+          </RequireAuth>
+        }
+      />
+      <Route path='/login' element={<LoginPage />} />
     </Routes>
   );
 };
-
 export default MyRoutes;
