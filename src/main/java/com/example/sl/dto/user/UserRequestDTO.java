@@ -4,4 +4,5 @@ public class UserRequestDTO {
     public String username;
     public String password;
     public String email;
+
 }
