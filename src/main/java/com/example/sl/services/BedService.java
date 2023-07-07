@@ -37,13 +37,11 @@ public class BedService {
 
     @Transactional
     public ResponseEntity<Object> updateBed(Long id, BedRequestDTO bedRequestDTO) {
-        Optional<Bed> bedOptional = bedRepository.findById(id);
+        Bed bed = bedRepository.findById(id).orElse(null);
 
-        if(bedOptional.isEmpty()) {
+        if (bed == null) {
             return ResponseEntity.notFound().build();
         } else {
-            Bed bed = bedOptional.get();
-
             bed.setOccupied(bedRequestDTO.occupied);
             bed.setType(bedRequestDTO.type);
 

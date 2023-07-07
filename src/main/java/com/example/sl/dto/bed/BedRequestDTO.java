@@ -11,9 +11,6 @@ public class BedRequestDTO {
 
     public String type;
 
-    public BedRequestDTO(){
-    }
-
     public BedRequestDTO(Boolean occupied, String type){
         this.occupied = occupied;
         this.type = type;

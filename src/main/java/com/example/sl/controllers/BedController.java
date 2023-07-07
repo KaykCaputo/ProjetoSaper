@@ -32,7 +32,7 @@ public class BedController{
     }
 
     @PutMapping("/{id}")
-    public Object updateBed(@PathVariable(name = "id") Long id, @ModelAttribute BedRequestDTO bedRequestDTO) {
+    public Object updateBed(@PathVariable(name = "id") Long id, @RequestBody BedRequestDTO bedRequestDTO) {
         return bedService.updateBed(id, bedRequestDTO);
     }
 
