@@ -45,7 +45,7 @@ public class PacientService {
             Pacient pacient = pacientOptional.get();
 
             pacient.setName(pacientRequestDTO.name);
-            pacient.setAge(pacientRequestDTO.age);
+            pacient.setAge(pacientRequestDTO.birthday);
             pacient.setPhone(pacientRequestDTO.phone);
             pacient.setMedicalRelease(pacientRequestDTO.medicalRelease);
 

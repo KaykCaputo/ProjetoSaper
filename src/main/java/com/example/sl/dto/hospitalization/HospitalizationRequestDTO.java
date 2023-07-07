@@ -1,5 +1,6 @@
 package com.example.sl.dto.hospitalization;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
@@ -18,7 +19,7 @@ public class HospitalizationRequestDTO {
     @NotBlank(message = "Origin can't be blank")
     public String origem;
 
-    @DateTimeFormat(iso = DateTimeFormat.ISO.DATE, fallbackPatterns = { "M/d/yy", "dd.MM.yyyy" })
+    @JsonFormat(pattern="yyyy-MM-dd")
     @NotNull
     public Date hospitalizationDate;
 

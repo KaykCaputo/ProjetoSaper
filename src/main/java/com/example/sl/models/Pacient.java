@@ -2,6 +2,8 @@ package com.example.sl.models;
 
 import com.example.sl.dto.pacient.PacientRequestDTO;
 import jakarta.persistence.*;
+
+import java.util.Date;
 import java.util.List;
 
 @Entity
@@ -12,7 +14,7 @@ public class Pacient {
     @Column(unique = true)
     String cpf;
     String name;
-    Integer age;
+    Date birthday;
     @Column(unique = true)
     String phone;
 
@@ -24,11 +26,11 @@ public class Pacient {
     public Pacient() {
     }
 
-    public Pacient(Long medicalRecord_id, String cpf, String name, Integer age, String phone, Boolean medicalRelease) {
+    public Pacient(Long medicalRecord_id, String cpf, String name, Date age, String phone, Boolean medicalRelease) {
         this.medicalRecord_id = medicalRecord_id;
         this.cpf = cpf;
         this.name = name;
-        this.age = age;
+        this.birthday = age;
         this.phone = phone;
         this.medicalRelease = medicalRelease;
     }
@@ -36,7 +38,7 @@ public class Pacient {
     public Pacient(PacientRequestDTO pacientRequestDTO) {
         this.cpf = pacientRequestDTO.cpf;
         this.name = pacientRequestDTO.name;
-        this.age = pacientRequestDTO.age;
+        this.birthday = pacientRequestDTO.birthday;
         this.phone = pacientRequestDTO.phone;
         this.medicalRelease = pacientRequestDTO.medicalRelease;
     }
@@ -49,12 +51,12 @@ public class Pacient {
         this.name = name;
     }
 
-    public Integer getAge() {
-        return age;
+    public Date getBirthday() {
+        return birthday;
     }
 
-    public void setAge(Integer age) {
-        this.age = age;
+    public void setAge(Date birthday) {
+        this.birthday = birthday;
     }
 
     public String getPhone() {
