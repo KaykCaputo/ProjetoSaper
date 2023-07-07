@@ -32,8 +32,8 @@ export default function BedsPage() {
   // Função para criar um novo leito
   async function createBed() {
     const bedData = {
-      occupied: "true",
-      type: "",
+      occupied: false,
+      type: "Indefinido",
     };
 
     const response = await api.post("/bed", bedData);
@@ -76,7 +76,7 @@ export default function BedsPage() {
               bed_id={b.bed_id}
               fugulim={b.type}
               status={b.occupied}
-              onDelete={() => {
+              refresh={() => {
                 api.get("/bed", {}, htmlConfig).then((res) => {
                   setBeds(res);
                 });
