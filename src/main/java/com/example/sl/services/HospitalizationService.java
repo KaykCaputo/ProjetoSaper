@@ -52,6 +52,9 @@ public class HospitalizationService {
         Hospitalization hospitalization = new Hospitalization(hospitalizationRequestDTO);
 
         hospitalizationRepository.save(hospitalization);
+        bedOptional.get().setOccupied(true);
+
+        bedRepository.save(bedOptional.get());
 
         return ResponseEntity.ok(hospitalization);
     }
