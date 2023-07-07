@@ -10,6 +10,10 @@ import { useAPI } from "../../../services/API";
 import Bed from "../../../entities/bed";
 
 export default function BedsPage() {
+
+  function refreshPage(){ 
+    window.location.reload(); 
+  }  
     // CONSULTAR LEITOS-------------------------------------
     const navigate = useNavigate();
     const [beds, setBeds] = useState<Array<Bed>>([]);
@@ -28,6 +32,21 @@ export default function BedsPage() {
       })
     }, [])
     //-------------------------------------------------------
+    //CRIAR LEITO--------------------------------------------
+    async function createBed() {
+      const bedData = {
+        occupied: "true",
+        type: ""
+      };
+      const response = await api.post("/bed", bedData);
+      const { data } = response;
+      const basicAuth = response.headers["authorization"];
+      refreshPage();
+      }
+      //-------------------------------------------------------
+      //APAGAR LEITO--------------------------------------------
+      
+    
   return (
     <body>
       <Sidebar />
@@ -36,6 +55,7 @@ export default function BedsPage() {
         <button
           type="button"
           className="btn btn-primary"
+          onClick={createBed}
           style={{
             marginRight: "0.5%",
             float: "right",
