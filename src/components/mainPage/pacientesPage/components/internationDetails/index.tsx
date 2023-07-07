@@ -5,27 +5,27 @@ import { Table } from "react-bootstrap";
 
 interface InternationDetailsProps {
   cause: string;
-  date: Date;
+  date: string;
   bed: number;
+  pacient: number;
   protocol: number;
 }
-const LocaleConfig: Intl.DateTimeFormatOptions = {
-  day: "numeric",
-  month: "numeric",
-  year: "numeric",
-};
+
 export default function InternationDetails({
   cause,
   date,
   bed,
+  pacient,
   protocol,
 }: InternationDetailsProps) {
   return (
     <tr>
-      <td>{cause}</td>
-      <td>{date.toLocaleDateString(undefined, LocaleConfig)}</td>
-      <td>{bed}</td>
       <td>{protocol}</td>
+      <td>{cause}</td>
+      <td>{date}</td>
+      <td>{bed}</td>
+      <td>{pacient}</td>
+
     </tr>
   );
 }

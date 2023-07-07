@@ -4,44 +4,24 @@ import { Link } from "react-router-dom";
 import { Table } from "react-bootstrap";
 
 interface PacienteDetailsProps {
+  medicalRecord_id: number,
   name: string;
-  age: number;
-  gender: string;
-  address: string;
+  birthday: string;
   phoneNumber: string;
-  email: string;
 }
 
 export default function PacientDetails({
+  medicalRecord_id,
   name,
-  age,
-  gender,
-  address,
+  birthday,
   phoneNumber,
-  email,
 }: PacienteDetailsProps) {
   return (
-    <div>
-      <Table>
-        <thead>
-          <th>Nome</th>
-          <th>Idade</th>
-          <th>Sexo</th>
-          <th>Endereço</th>
-          <th>Telefone</th>
-          <th>Email</th>
-        </thead>
-        <tbody>
-          <tr>
-            <td>{name}</td>
-            <td>{age} anos</td>
-            <td>{gender}</td>
-            <td>{address}</td>
-            <td>{phoneNumber}</td>
-            <td>{email}</td>
-          </tr>
-        </tbody>
-      </Table>
-    </div>
+    <tr>
+      <td>{medicalRecord_id}</td>
+      <td>{name}</td>
+      <td>{birthday}</td>
+      <td>{phoneNumber}</td>
+    </tr>
   );
 }

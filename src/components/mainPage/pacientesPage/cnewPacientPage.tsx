@@ -2,8 +2,43 @@ import React from "react";
 import Helmet from "react-helmet";
 import Sidebar from "../../sidebar/sidebar";
 import "../main.css";
+import { useState } from "react";
+import { useAPI } from "../../../services/API";
+import { useNavigate } from "react-router-dom";
 
 export default function NewPacientPage() {
+  const [formData, setFormData] = useState({
+    "name": "",
+    "cpf": "",
+    "birthday": "",
+    "phone": "",
+    "medicalRelease": "false"
+  });
+
+  const api = useAPI();
+  const navigate = useNavigate();
+
+  const changeFormData = (e: any) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value
+    });
+  };
+
+  async function createPacient(e: any) {
+    e.preventDefault();
+
+    try {
+      const response = await api.post("/pacient", formData);
+      const { data } = response;
+
+      navigate("/pacients")
+    } catch (error) {
+      console.error(`Some error as ocurred: ${error}`)
+    }
+
+  }
+
   return (
     <body>
       <Sidebar />
@@ -12,33 +47,20 @@ export default function NewPacientPage() {
           <h3>Cadastrar Paciente</h3>
           <div className="form-group">
             <label htmlFor="nome">Nome Do Paciente:</label>
-            <input type="text" id="nome" name="nome" required />
+            <input type="text" id="nome" name="name" required onChange={changeFormData} />
           </div>
-          <form>
+          <form onSubmit={createPacient}>
             <div className="form-group">
               <label htmlFor="nome">CPF do paciente:</label>
-              <input type="text" id="nome" name="nome" required />
+              <input type="text" id="nome" name="cpf" required onChange={changeFormData} />
             </div>
             <div className="form-group">
               <label htmlFor="nome">Data de Nascimento:</label>
-              <input type="Date" id="nome" name="nome" required />
-            </div>
-            <div className="form-group">
-              <label htmlFor="motivo">Endereço:</label>
-              <textarea id="motivo" name="motivo" required></textarea>
+              <input type="Date" id="nome" name="birthday" required onChange={changeFormData} />
             </div>
             <div className="form-group">
               <label htmlFor="tel">Telefone:</label>
-              <input type="tel" id="tel" name="tel" required />
-            </div>
-            <div className="form-group">
-              <label htmlFor="Gender">Sexo:</label>
-              <select id="Gender" name="Gender">
-                <option value="masc">Masculino</option>
-                <option value="fem">Feminino</option>
-                <option value="other">Outro</option>
-                <option value="not">Prefiro não responder</option>
-              </select>
+              <input type="tel" id="tel" name="phone" required onChange={changeFormData} />
             </div>
             <div className="button-container">
               <button type="submit" className="btn-submit">
