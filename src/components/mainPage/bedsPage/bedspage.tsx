@@ -10,15 +10,24 @@ import { useAPI } from "../../../services/API";
 import Bed from "../../../entities/bed";
 
 export default function BedsPage() {
+    // CONSULTAR LEITOS-------------------------------------
     const navigate = useNavigate();
     const [beds, setBeds] = useState<Array<Bed>>([]);
     const api = useAPI()
-  
+
+    const htmlConfig = {
+      headers: {
+        "Content-Type": "application/json",
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Credentials": "true",
+      },
+    };
     useEffect(() => {
-      api.get('/beds', {}).then((res) => {
+      api.get('/bed', {}, htmlConfig).then((res) => {
         setBeds(res)
       })
     }, [])
+    //-------------------------------------------------------
   return (
     <body>
       <Sidebar />
@@ -43,7 +52,7 @@ export default function BedsPage() {
             <th></th>
           </tr>
 
-          { beds.map(b => <BedDetails key={b.id} bedId={b.id} fugulim={b.fugulin} status={b.busy} />)}
+          { beds.map(b => <BedDetails key={b.id} bedId={b.id} fugulim={b.type} status={b.occupied} />)}
         </table>
       </div>
     </body>

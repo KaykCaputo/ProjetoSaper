@@ -1,5 +1,5 @@
 export default interface Bed {
     id: number;
-    busy: boolean;
-    fugulin: string;
+    occupied: boolean;
+    type: string;
 }

@@ -32,13 +32,13 @@ const MyRoutes = () => {
               <Route path='/' element={<Mainpage />} />
               <Route path='/pacients' element={<PacientsPage />} />
               <Route path='/pacients/new' element={<NewPacientPage />} />
-              <Route path='/beds' element={<BedsPage />} />
               <Route path='/pacients/internation' element={<InternationPage />} />
             </Routes>
           </RequireAuth>
         }
       />
       <Route path='/login' element={<LoginPage />} />
+      <Route path='/beds' element={<BedsPage />} />
     </Routes>
   );
 };
