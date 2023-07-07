@@ -14,13 +14,17 @@ const RequireAuth = ({ children }: { children: any }) => {
 
   if (!auth.user) {
     return <Navigate to='/login' />;
+  }else{
+    window.localStorage.setItem('state', JSON.stringify(auth.user));
   }
 
   return <React.Fragment>{children}</React.Fragment>;
 };
+export function refreshPage(){ 
+  window.location.reload(); 
+} 
 
 const MyRoutes = () => {
-  const auth = useContext(AuthContext);
   return (
     <Routes>
       <Route
@@ -33,12 +37,13 @@ const MyRoutes = () => {
               <Route path='/pacients' element={<PacientsPage />} />
               <Route path='/pacients/new' element={<NewPacientPage />} />
               <Route path='/pacients/internation' element={<InternationPage />} />
+              <Route path='/beds' element={<BedsPage />} />
             </Routes>
           </RequireAuth>
         }
       />
       <Route path='/login' element={<LoginPage />} />
-      <Route path='/beds' element={<BedsPage />} />
+     
     </Routes>
   );
 };

@@ -19,7 +19,6 @@ type LoginData = {
 
 export default function LoginPage() {
   //LOGIN
-  document.body.style.overflow = "hidden";
   const auth = useContext(AuthContext);
   const navigate = useNavigate();
   const [state, setState] = useState<LoginData>({ username: "", password: "" , email:""});
@@ -36,6 +35,7 @@ export default function LoginPage() {
   function doLogin() {
     if (state.username && state.password) {
       const basicAuth = "Basic " + btoa(state.username + ":" + state.password);
+      window.localStorage.setItem('state', JSON.stringify(state));
       const htmlConfig = {
         headers: {
           "Content-Type": "application/json",

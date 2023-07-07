@@ -1,5 +1,5 @@
 export default interface Bed {
-    id: number;
+    bed_id: number;
     occupied: boolean;
     type: string;
 }

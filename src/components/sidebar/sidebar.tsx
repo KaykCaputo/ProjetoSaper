@@ -9,7 +9,7 @@ import { AuthContext } from "../../store/authContext";
 export default function Sidebar() {
   const auth = useContext(AuthContext);
   return (
-    <body>
+    <body style={{position:"sticky"}}>
       <div className="topnav">
         <a className="openbtn" onClick={() => toggleNav()}>
           ☰
