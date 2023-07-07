@@ -66,7 +66,7 @@ export default function InternationPage() {
             </div>
             <div className="form-group">
               <label htmlFor="situacao">Situação do Paciente(Fugulin):</label>
-              <select required onChange={changeFormData} name="fugilin">
+              <select required onChange={changeFormData} name="fugilin" style={{fontSize:"17px"}}>
                 <option value={"Cuidados minimos"}>Cuidados minimos</option>
                 <option value={"Cuidados intermediarios"}>Cuidados intermediarios</option>
                 <option value={"Cuidados de alta dependência"}>Cuidados de alta dependência</option>
@@ -76,14 +76,14 @@ export default function InternationPage() {
             </div>
             <div className="form-group">
               <label htmlFor="situacao">Origem:</label>
-              <select required onChange={changeFormData} name="origem">
+              <select required onChange={changeFormData} name="origem" style={{fontSize:"17px"}}>
                 <option value={"SAMU"}>SAMU</option>
                 <option value={"Demanda Espontanea"}>Demanda Espontanea</option>
              </select>
             </div>
             <div className="form-group">
               <label htmlFor="situacao">Especialidade:</label>
-              <select required onChange={changeFormData} name="specialty">
+              <select required onChange={changeFormData} name="specialty" style={{fontSize:"17px"}}>
                 <option value={"Cuidados minimos"}>Leito de enfermaria</option>
                 <option value={"Cuidados intermediarios"}>Leito de terapia intensiva</option>
                 <option value={"Cuidados de alta dependência"}>Parecer de outra especialidade</option>
