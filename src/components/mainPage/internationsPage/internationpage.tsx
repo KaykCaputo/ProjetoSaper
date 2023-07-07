@@ -66,15 +66,31 @@ export default function InternationPage() {
             </div>
             <div className="form-group">
               <label htmlFor="situacao">Situação do Paciente(Fugulin):</label>
-              <input type="text" id="situacao" name="fugilin" required onChange={changeFormData} />
+              <select required onChange={changeFormData} name="fugilin">
+                <option value={"Cuidados minimos"}>Cuidados minimos</option>
+                <option value={"Cuidados intermediarios"}>Cuidados intermediarios</option>
+                <option value={"Cuidados de alta dependência"}>Cuidados de alta dependência</option>
+                <option value={"Cuidados semi-intensivos"}>Cuidados semi-intensivos</option>
+                <option value={"Cuidados intensivos"}>Cuidados intensivos</option>
+             </select>
             </div>
             <div className="form-group">
               <label htmlFor="situacao">Origem:</label>
-              <input type="text" id="origem" name="origem" required onChange={changeFormData} />
+              <select required onChange={changeFormData} name="origem">
+                <option value={"SAMU"}>SAMU</option>
+                <option value={"Demanda Espontanea"}>Demanda Espontanea</option>
+             </select>
             </div>
             <div className="form-group">
               <label htmlFor="situacao">Especialidade:</label>
-              <input type="text" id="especialidade" name="specialty" required onChange={changeFormData} />
+              <select required onChange={changeFormData} name="specialty">
+                <option value={"Cuidados minimos"}>Leito de enfermaria</option>
+                <option value={"Cuidados intermediarios"}>Leito de terapia intensiva</option>
+                <option value={"Cuidados de alta dependência"}>Parecer de outra especialidade</option>
+                <option value={"Cuidados semi-intensivos"}>Transferencia externa</option>
+                <option value={"Cuidados intensivos"}>Social</option>
+                <option value={"Cuidados intensivos"}>Hemodialise</option>
+             </select>
             </div>
             <div className="button-container">
               <button type="submit" className="btn-submit">

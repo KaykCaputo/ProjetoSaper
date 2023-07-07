@@ -38,6 +38,11 @@ body {
   font-family: "Poppins", sans-serif;
   background-color: #fafafa;
 }
+select{
+  width: 100%;
+  border-radius: 6px;
+  font-size: 20px;
+}
 
 .row {
   display: flex;
