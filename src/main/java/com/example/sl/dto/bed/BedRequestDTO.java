@@ -7,11 +7,8 @@ import jdk.jfr.BooleanFlag;
 
 public class BedRequestDTO {
     @BooleanFlag
-    @NotNull
     public Boolean occupied;
 
-    @Size(max = 30, message = "Insert the type of bed, max 30 characters")
-    @NotBlank(message = "Type can't be blank")
     public String type;
 
     public BedRequestDTO(){

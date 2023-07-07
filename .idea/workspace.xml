@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0d643004-0749-405a-947a-c5a6ca017abc" name="Changes" comment="Sign-in working">
+    <list default="true" id="0d643004-0749-405a-947a-c5a6ca017abc" name="Changes" comment=".">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/sl/controllers/BedController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/sl/controllers/BedController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/sl/dto/bed/BedRequestDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/sl/dto/bed/BedRequestDTO.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -144,7 +145,15 @@
       <option name="project" value="LOCAL" />
       <updated>1688678623796</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary=".">
+      <option name="closed" value="true" />
+      <created>1688750113059</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1688750113059</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -165,6 +174,7 @@
     <MESSAGE value="Login working" />
     <MESSAGE value="Login fully working" />
     <MESSAGE value="Sign-in working" />
-    <option name="LAST_COMMIT_MESSAGE" value="Sign-in working" />
+    <MESSAGE value="." />
+    <option name="LAST_COMMIT_MESSAGE" value="." />
   </component>
 </project>

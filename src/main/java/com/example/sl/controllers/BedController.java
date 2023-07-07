@@ -27,12 +27,12 @@ public class BedController{
     }
 
     @PostMapping
-    public Bed addBed(@ModelAttribute BedRequestDTO bedRequestDTO) {
+    public Bed addBed(@RequestBody BedRequestDTO bedRequestDTO) {
         return bedService.addBed(bedRequestDTO);
     }
 
     @PutMapping("/{id}")
-    public Object updateBed(@PathVariable(name = "id") Long id, @RequestBody BedRequestDTO bedRequestDTO) {
+    public Object updateBed(@PathVariable(name = "id") Long id, @ModelAttribute BedRequestDTO bedRequestDTO) {
         return bedService.updateBed(id, bedRequestDTO);
     }
 
