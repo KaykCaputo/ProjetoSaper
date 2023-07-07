@@ -30,12 +30,12 @@ export default function BedDetails({
   }
   type BedData = {
     bedId: number;
-    occupied: boolean;
+    occupied: string;
     type: string;
   };
   const [state, setState] = useState<BedData>({
     bedId: 0,
-    occupied: false,
+    occupied: "",
     type: "",
   });
   const api = useAPI();
@@ -133,7 +133,7 @@ export default function BedDetails({
                 Disponibilidade:
                 <Form.Select
                   aria-label="Default select example"
-                  value={state.type}
+                  value={state.occupied}
                   onChange={(e) => onUpdate(e, "occupied")}
                 >
                   <option>Selecione</option>
