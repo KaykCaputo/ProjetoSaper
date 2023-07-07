@@ -64,7 +64,7 @@ export default function Sidebar() {
           <Dropdown.Menu>
             <Dropdown.Item>
               <Link
-                to="/pacients/newPaciente"
+                to="/pacients/new"
                 style={{
                   padding: "1% 20% 1% 0%",
                   boxSizing: "content-box",

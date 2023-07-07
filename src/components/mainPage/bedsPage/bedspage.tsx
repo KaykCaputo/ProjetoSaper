@@ -1,15 +1,24 @@
 import Helmet from "react-helmet";
 import Sidebar from "../../sidebar/sidebar";
 import BedDetails from "./components/bedDetails";
-import Table from "react-bootstrap/Table";
 import "../main.css";
+import { MapContainer, Marker, Popup, TileLayer } from 'react-leaflet'
+import L from 'leaflet';
+import {Link, useNavigate} from 'react-router-dom'
 import React, { useEffect, useState } from "react";
-import { MapContainer, Marker, Popup, TileLayer } from "react-leaflet";
-import L from "leaflet";
 import { useAPI } from "../../../services/API";
-import { Link, useNavigate } from "react-router-dom";
+import Bed from "../../../entities/bed";
 
 export default function BedsPage() {
+    const navigate = useNavigate();
+    const [beds, setBeds] = useState<Array<Bed>>([]);
+    const api = useAPI()
+  
+    useEffect(() => {
+      api.get('/beds', {}).then((res) => {
+        setBeds(res)
+      })
+    }, [])
   return (
     <body>
       <Sidebar />
@@ -33,9 +42,8 @@ export default function BedsPage() {
             <th>Fugulin</th>
             <th></th>
           </tr>
-          <BedDetails bedId={1} fugulim="Grave" status={true} />
-          <BedDetails bedId={2} fugulim="" status={false} />
-          <BedDetails bedId={3} fugulim="Moderado" status={true} />
+
+          { beds.map(b => <BedDetails key={b.id} bedId={b.id} fugulim={b.fugulin} status={b.busy} />)}
         </table>
       </div>
     </body>
