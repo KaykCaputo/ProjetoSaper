@@ -6,6 +6,8 @@ import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Base64;
+
 
 @RestController
 @RequestMapping("/bed")
@@ -25,7 +27,7 @@ public class BedController{
     }
 
     @PostMapping
-    public Bed addBed(@Valid @RequestBody BedRequestDTO bedRequestDTO) {
+    public Bed addBed(@ModelAttribute BedRequestDTO bedRequestDTO) {
         return bedService.addBed(bedRequestDTO);
     }
 
@@ -35,7 +37,7 @@ public class BedController{
     }
 
     @DeleteMapping("/{id}")
-    public Object eleterBed(@PathVariable(name = "id") Long id) {
+    public Object deleteBed(@PathVariable(name = "id") Long id) {
         return bedService.deleteBed(id);
     }
 }
