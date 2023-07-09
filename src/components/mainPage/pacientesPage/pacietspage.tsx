@@ -8,6 +8,7 @@ import { useAPI } from "../../../services/API";
 import Pacient from "../../../entities/pacient";
 import { Table } from "react-bootstrap";
 import Internation from "../../../entities/internation";
+import convertDate from "../../../services/convertDate";
 
 export default function PacientsPage() {
   const [pacients, setPacients] = useState<Array<Pacient>>([]);
@@ -32,13 +33,6 @@ export default function PacientsPage() {
       setInternations(res);
     });
   }, []);
-
-  function convertDate(date: string) {
-    const simpleDate = date.substring(0, 10);
-    const brazilianDate = simpleDate.split("-").reverse().join("/");
-
-    return brazilianDate;
-  }
 
   return (
     <body>
@@ -113,7 +107,7 @@ export default function PacientsPage() {
                   bed={internation.bed_id}
                   cause={internation.permanenceReason}
                   protocol={internation.hospitalization_id}
-                  date={convertDate(internation.hospitalizationDate)}
+                  date={internation.hospitalizationDate}
                   pacient={internation.medicalRecord_id}
               />
             ))}
