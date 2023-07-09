@@ -4,17 +4,20 @@ import Sidebar from "../../sidebar/sidebar";
 import "../main.css";
 import { useNavigate } from "react-router-dom";
 import { useAPI } from "../../../services/API";
+import requestError from "../../../entities/error";
 
 export default function InternationPage() {
   const [formData, setFormData] = useState({
     "permanenceReason": "",
     "hospitalizationDate": "",
     "bed_id": "",
-    "fugilin": "",
+    "fugilin": "Cuidados minimos",
     "medicalRelease": "false",
-    "origem": "",
-    "specialty": ""
+    "origem": "SAMU",
+    "specialty": "Leito de enfermaria"
   });
+
+  const [errors, setErrors] = useState<Array<requestError>>([]);
 
   const api = useAPI();
   const navigate = useNavigate();
@@ -29,16 +32,15 @@ export default function InternationPage() {
   async function createInternation(e: any) {
     e.preventDefault();
 
-    console.log("Entrou")
-
-    try {
-      const response = await api.post("/hospitalization", formData);
-      const { data } = response;
-
-      navigate("/pacients")
-    } catch (error) {
-      console.error(`Some error as ocurred: ${error}`)
-    }
+    await api.post("/hospitalization", formData).then((res) => {
+      navigate("/pacients");
+    }).catch((err) => {
+      if(err.response.status === 409) {
+        setErrors([{ field: "pacient/bed", error: err.response.data }]);
+      } else {
+        setErrors(err.response.data);
+      }
+    });
   }
 
   return (
@@ -84,14 +86,19 @@ export default function InternationPage() {
             <div className="form-group">
               <label htmlFor="situacao">Especialidade:</label>
               <select required onChange={changeFormData} name="specialty" style={{fontSize:"17px"}}>
-                <option value={"Cuidados minimos"}>Leito de enfermaria</option>
-                <option value={"Cuidados intermediarios"}>Leito de terapia intensiva</option>
-                <option value={"Cuidados de alta dependência"}>Parecer de outra especialidade</option>
-                <option value={"Cuidados semi-intensivos"}>Transferencia externa</option>
-                <option value={"Cuidados intensivos"}>Social</option>
-                <option value={"Cuidados intensivos"}>Hemodialise</option>
+                <option value={"Leito de enfermaria"}>Leito de enfermaria</option>
+                <option value={"Leito de terapia intensiva"}>Leito de terapia intensiva</option>
+                <option value={"Parecer de outra especialidade"}>Parecer de outra especialidade</option>
+                <option value={"Transferencia externa"}>Transferencia externa</option>
+                <option value={"Social"}>Social</option>
+                <option value={"Hemodialise"}>Hemodialise</option>
              </select>
             </div>
+            {errors &&
+              errors.map((error: requestError, key) => (
+                <p key={key}>{error.error}</p>
+              ))
+            }
             <div className="button-container">
               <button type="submit" className="btn-submit">
                 Registrar Internação
