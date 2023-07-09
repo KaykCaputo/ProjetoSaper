@@ -42,11 +42,11 @@ public class HospitalizationService {
         Optional<Bed> bedOptional = bedRepository.findById(hospitalizationRequestDTO.bed_id);
 
         if(pacientOptional.isEmpty()) {
-            return ResponseEntity.badRequest().body("There is no pacient with the received id");
+            return ResponseEntity.status(409).body("Não há paciente com o id recebido");
         }
 
         if(bedOptional.isEmpty()) {
-            return ResponseEntity.badRequest().body("There is no bed with the received id");
+            return ResponseEntity.status(409).body("Não há leito com o id recebido");
         }
 
         Hospitalization hospitalization = new Hospitalization(hospitalizationRequestDTO);

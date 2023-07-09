@@ -24,7 +24,7 @@ public class PacientController {
     }
 
     @PostMapping
-    public Pacient addPacient(@Valid @RequestBody PacientRequestDTO pacientRequestDTO) {
+    public Object addPacient(@Valid @RequestBody PacientRequestDTO pacientRequestDTO) {
         return pacientService.addPacient(pacientRequestDTO);
     }
 

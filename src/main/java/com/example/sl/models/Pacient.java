@@ -15,7 +15,7 @@ public class Pacient {
     String cpf;
     String name;
     Date birthday;
-    @Column(unique = true)
+
     String phone;
 
     Boolean medicalRelease;

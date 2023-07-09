@@ -27,12 +27,18 @@ public class PacientService {
     }
 
     @Transactional
-    public Pacient addPacient(PacientRequestDTO pacientRequestDTO) {
+    public ResponseEntity<Object> addPacient(PacientRequestDTO pacientRequestDTO) {
+        Optional<Pacient> pacientOptional = pacientRepository.findByCpf(pacientRequestDTO.cpf);
+
+        if (!pacientOptional.isEmpty()) {
+            return ResponseEntity.status(409).body("Já existe um paciente com esse CPF");
+        }
+
         Pacient pacient = new Pacient(pacientRequestDTO);
 
         pacientRepository.save(pacient);
 
-        return pacient;
+        return ResponseEntity.ok().body(pacient);
     }
 
     @Transactional

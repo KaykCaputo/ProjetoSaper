@@ -14,16 +14,16 @@ public class PacientRequestDTO {
     public String cpf;
 
 
-    @Size(min = 5, max = 100, message = "The patient name must be between 5 and 100 characters")
-    @NotBlank(message = "Name can't be blank")
+    @Size(min = 5, max = 100, message = "O nome do paciente deve ter entre 5 e 100 caracteres")
+    @NotBlank(message = "O nome não pode ser vazio")
     public String name;
 
     @JsonFormat(pattern="yyyy-MM-dd")
-    @NotNull
+    @NotNull(message = "A data de aniversario não pode ser vazia")
     public Date birthday;
 
-    @Size(min = 8, message = "Insert the phone number")
-    @NotBlank(message = "Phone can't be blank")
+    @Size(min = 8, message = "O numero de telefone deve ter no minimo 8 caracteres")
+    @NotBlank(message = "Telefone não pode ser vazio")
     public String phone;
 
     @BooleanFlag
