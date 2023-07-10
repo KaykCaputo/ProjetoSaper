@@ -6,9 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="0d643004-0749-405a-947a-c5a6ca017abc" name="Changes" comment="add and delete beds with frontend">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/sl/controllers/BedController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/sl/controllers/BedController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/sl/dto/bed/BedRequestDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/sl/dto/bed/BedRequestDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/sl/services/BedService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/sl/services/BedService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/sl/services/HospitalizationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/sl/services/HospitalizationService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

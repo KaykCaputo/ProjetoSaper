@@ -53,6 +53,7 @@ public class HospitalizationService {
 
         hospitalizationRepository.save(hospitalization);
         bedOptional.get().setOccupied(true);
+        bedOptional.get().setType(hospitalizationRequestDTO.specialty);
 
         bedRepository.save(bedOptional.get());
 
